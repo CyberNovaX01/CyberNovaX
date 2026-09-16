@@ -1,13 +1,32 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Gamepad2 } from "lucide-react";
+import { Gamepad2, Trophy, Target } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { ThemeToggle } from "./ThemeToggle";
 import { useT } from "@/lib/i18n";
 
 type GameBadge = { slug: string; name: string; lastUpdated: string | null };
+
+const QUICK_ACTIONS = [
+  {
+    href: "/mlbb/tier",
+    icon: Trophy,
+    labelKm: "Tier",
+    labelEn: "Tier",
+    tooltip: "Tier List",
+    color: "#f5c542",
+  },
+  {
+    href: "/ff/sensitivity",
+    icon: Target,
+    labelKm: "Sensi",
+    labelEn: "Sensi",
+    tooltip: "Sensitivity",
+    color: "#22d3ee",
+  },
+];
 
 export function Header({
   games,
@@ -48,12 +67,12 @@ export function Header({
     <header className="sticky top-0 z-40 border-b border-line glass transition-all duration-300">
       <div
         className={
-          "mx-auto flex max-w-7xl items-center gap-3 px-4 transition-all duration-300 sm:px-6 " +
+          "mx-auto flex max-w-7xl items-center gap-2 px-3 transition-all duration-300 sm:gap-3 sm:px-6 " +
           (scrolled ? "h-12" : "h-16")
         }
       >
         {/* LOGO */}
-        <Link href="/" className="group flex shrink-0 items-center gap-2.5">
+        <Link href="/" className="group flex shrink-0 items-center gap-2 sm:gap-2.5">
           <span
             className="grid h-9 w-9 place-items-center rounded-xl text-black shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
             style={{
@@ -65,7 +84,7 @@ export function Header({
           </span>
           <div
             className={
-              "hidden leading-tight transition-all duration-300 sm:block " +
+              "hidden leading-tight transition-all duration-300 md:block " +
               (scrolled ? "opacity-70" : "opacity-100")
             }
           >
@@ -76,7 +95,7 @@ export function Header({
           </div>
         </Link>
 
-        {/* NAV — Desktop */}
+        {/* NAV — Desktop only (lg+) */}
         <nav className="hidden items-center gap-0.5 lg:flex">
           {nav.map((n) => {
             const active =
@@ -101,8 +120,52 @@ export function Header({
           })}
         </nav>
 
+        {/* QUICK ACTIONS — Always show (icon + text) */}
+        <div className="flex items-center gap-1 lg:ml-2 lg:border-l lg:border-line lg:pl-2">
+          {QUICK_ACTIONS.map((q) => {
+            const Icon = q.icon;
+            const active = pathname.startsWith(q.href);
+            return (
+              <Link
+                key={q.href}
+                href={q.href}
+                title={q.tooltip}
+                aria-label={q.tooltip}
+                className="group relative flex h-9 items-center gap-1.5 rounded-xl border px-2 text-xs font-bold transition-all hover:-translate-y-0.5 sm:px-2.5"
+                style={{
+                  borderColor: active ? q.color + "80" : "var(--color-line)",
+                  background: active ? q.color + "15" : "var(--color-surface)",
+                  color: active ? q.color : "var(--color-muted)",
+                  boxShadow: active ? "0 0 20px -6px " + q.color + "88" : "none",
+                }}
+              >
+                <Icon
+                  size={14}
+                  className="transition-transform group-hover:scale-125 group-hover:rotate-12"
+                />
+                {/* SHOW TEXT always */}
+                <span className="hidden xs:inline sm:inline">
+                  {q.labelEn}
+                </span>
+
+                {/* hover glow */}
+                <span
+                  className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(circle at center, " +
+                      q.color +
+                      "20 0%, transparent 70%)",
+                    boxShadow: "0 0 20px -4px " + q.color + "80",
+                  }}
+                />
+              </Link>
+            );
+          })}
+        </div>
+
         {/* RIGHT — Actions */}
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
           <LanguageSwitch />
           <ThemeToggle />
 
@@ -143,7 +206,7 @@ export function Header({
       <nav
         className="overflow-hidden border-t border-line glass transition-all duration-300 lg:hidden"
         style={{
-          maxHeight: open ? "400px" : "0",
+          maxHeight: open ? "600px" : "0",
           opacity: open ? 1 : 0,
         }}
       >
@@ -167,6 +230,29 @@ export function Header({
               </Link>
             );
           })}
+
+          {/* Quick Actions in Mobile Menu */}
+          <div className="mt-2 grid grid-cols-2 gap-2 border-t border-line pt-3">
+            {QUICK_ACTIONS.map((q) => {
+              const Icon = q.icon;
+              return (
+                <Link
+                  key={q.href}
+                  href={q.href}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-2 rounded-xl border px-3 py-2.5 text-xs font-bold transition-all"
+                  style={{
+                    borderColor: q.color + "40",
+                    background: q.color + "10",
+                    color: q.color,
+                  }}
+                >
+                  <Icon size={14} />
+                  {q.tooltip}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </nav>
 
