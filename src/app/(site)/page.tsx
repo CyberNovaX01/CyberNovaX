@@ -8,6 +8,8 @@ import {
 import { MoodSetter } from "@/components/MoodSetter";
 import { HeroBanner } from "@/components/HeroBanner";
 import { LiveStatsBar } from "@/components/LiveStatsBar";
+import { MetaTierPreview } from "@/components/MetaTierPreview";
+import { FeaturedGuides } from "@/components/FeaturedGuides";
 import { GameShowcase } from "@/components/GameShowcase";
 import { FadeIn } from "@/components/FadeIn";
 import { NEWS, PATCHES } from "@/lib/siteData";
@@ -32,6 +34,8 @@ export default function HomePage() {
       <MoodSetter mood={mood} />
       <HeroBanner />
       <LiveStatsBar />
+      <MetaTierPreview />
+      <FeaturedGuides />
       <GameShowcase onHoverMood={setMood} />
 
       {/* NEWS SECTION */}
