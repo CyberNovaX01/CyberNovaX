@@ -10,7 +10,6 @@ import { HeroBanner } from "@/components/HeroBanner";
 import { LiveStatsBar } from "@/components/LiveStatsBar";
 import { MetaTierPreview } from "@/components/MetaTierPreview";
 import { FeaturedGuides } from "@/components/FeaturedGuides";
-import { GameShowcase } from "@/components/GameShowcase";
 import { FadeIn } from "@/components/FadeIn";
 import { NEWS, PATCHES } from "@/lib/siteData";
 import { useLang } from "@/lib/i18n";
@@ -36,7 +35,6 @@ export default function HomePage() {
       <LiveStatsBar />
       <MetaTierPreview />
       <FeaturedGuides />
-      <GameShowcase onHoverMood={setMood} />
 
       {/* NEWS SECTION */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
