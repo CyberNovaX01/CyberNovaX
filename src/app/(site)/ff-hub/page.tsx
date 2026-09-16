@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight, Flame } from "lucide-react";
+import { ArrowRight, Flame, Sparkles } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { FadeIn } from "@/components/FadeIn";
 import { MoodSetter } from "@/components/MoodSetter";
@@ -17,6 +17,7 @@ type FFGuide = {
   accent2: string;
   badge: string;
   meta: string;
+  featured?: boolean;
 };
 
 const GUIDES: FFGuide[] = [
@@ -27,11 +28,12 @@ const GUIDES: FFGuide[] = [
     titleEn: "Sensitivity",
     descKm: "កំណត់ sensitivity ត្រូវនឹងឧបករណ៍របស់អ្នក",
     descEn: "Tune sensitivity to match your device",
-    href: "/ff",
-    accent: "#8b5cf6",
-    accent2: "#a78bfa",
-    badge: "24+ DEVICES",
-    meta: "4 play styles",
+    href: "/ff/sensitivity",
+    accent: "#22d3ee",
+    accent2: "#67e8f9",
+    badge: "176+ DEVICES",
+    meta: "8 sensitivity values",
+    featured: true,
   },
   {
     slug: "characters",
@@ -40,9 +42,9 @@ const GUIDES: FFGuide[] = [
     titleEn: "Characters",
     descKm: "មគ្គុទ្ទេសក៍ និងជំនាញតួអង្គទាំងអស់",
     descEn: "Full guide to every character skill",
-    href: "/ff",
-    accent: "#a855f7",
-    accent2: "#c084fc",
+   href: "/ff/characters",
+    accent: "#06b6d4",
+    accent2: "#22d3ee",
     badge: "40+ HEROES",
     meta: "Skills & roles",
   },
@@ -53,9 +55,9 @@ const GUIDES: FFGuide[] = [
     titleEn: "Weapons",
     descKm: "ព័ត៌មានលម្អិត និង stats អាវុធទាំងអស់",
     descEn: "Detailed stats on every weapon",
-    href: "/ff",
-    accent: "#7c3aed",
-    accent2: "#a78bfa",
+    href: "/ff/weapons",
+    accent: "#0891b2",
+    accent2: "#06b6d4",
     badge: "30+ WEAPONS",
     meta: "Damage & range",
   },
@@ -66,9 +68,9 @@ const GUIDES: FFGuide[] = [
     titleEn: "Pets",
     descKm: "ជំនាញសត្វចិញ្ចឹម និងការប្រើប្រាស់ល្អបំផុត",
     descEn: "Pet skills and best usage tips",
-    href: "/ff",
-    accent: "#9333ea",
-    accent2: "#c084fc",
+     href: "/ff/pets",
+    accent: "#0e7490",
+    accent2: "#0891b2",
     badge: "20+ PETS",
     meta: "Skills & combos",
   },
@@ -79,7 +81,8 @@ const GUIDES: FFGuide[] = [
     titleEn: "Maps",
     descKm: "យុទ្ធសាស្ត្រ និងចំណុចសំខាន់លើផែនទី",
     descEn: "Strategy and key spots on each map",
-    href: "/ff",
+    href: "/ff/maps",
+    accent: "#6366f1",
     accent: "#6366f1",
     accent2: "#818cf8",
     badge: "ALL MAPS",
@@ -92,9 +95,9 @@ const GUIDES: FFGuide[] = [
     titleEn: "Tier List",
     descKm: "ចំណាត់ថ្នាក់តួអង្គតាម Meta បច្ចុប្បន្ន",
     descEn: "Character rankings by current meta",
-    href: "/tier",
-    accent: "#d946ef",
-    accent2: "#e879f9",
+   href: "/ff/tier",
+    accent: "#a855f7",
+    accent2: "#c084fc",
     badge: "S + A + B TIER",
     meta: "Updated weekly",
   },
@@ -114,14 +117,14 @@ export default function FFHubPage() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at top left, rgba(139,92,246,0.28) 0%, transparent 55%), radial-gradient(ellipse at bottom right, rgba(217,70,239,0.18) 0%, transparent 55%), linear-gradient(180deg, #0a0d14 0%, #0a0d14 100%)",
+              "radial-gradient(ellipse at top left, rgba(34,211,238,0.28) 0%, transparent 55%), radial-gradient(ellipse at bottom right, rgba(139,92,246,0.18) 0%, transparent 55%), linear-gradient(180deg, #0a0d14 0%, #0a0d14 100%)",
           }}
         />
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              "linear-gradient(#a78bfa 1px, transparent 1px), linear-gradient(90deg, #a78bfa 1px, transparent 1px)",
+              "linear-gradient(#22d3ee 1px, transparent 1px), linear-gradient(90deg, #22d3ee 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />
@@ -130,7 +133,7 @@ export default function FFHubPage() {
           <FadeIn>
             <div
               className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em]"
-              style={{ color: "#a78bfa" }}
+              style={{ color: "#22d3ee" }}
             >
               <Flame size={13} />
               <span>FREE FIRE HUB</span>
@@ -139,7 +142,7 @@ export default function FFHubPage() {
               <span className="text-white">Free Fire</span>{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #a78bfa 0%, #d946ef 100%)",
+                  background: "linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -164,8 +167,13 @@ export default function FFHubPage() {
             <FadeIn key={g.slug} delay={i * 60}>
               <Link
                 href={g.href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-line bg-surface transition-all hover:-translate-y-1 hover:border-line-2"
-                style={{ boxShadow: "0 20px 50px -30px " + g.accent + "88" }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-xl border bg-surface transition-all hover:-translate-y-1"
+                style={{
+                  borderColor: g.featured ? g.accent + "80" : "var(--color-line)",
+                  boxShadow: g.featured
+                    ? "0 20px 50px -25px " + g.accent + "aa, 0 0 0 1px " + g.accent + "40"
+                    : "0 20px 50px -30px " + g.accent + "88",
+                }}
               >
                 {/* IMAGE AREA */}
                 <div
@@ -195,6 +203,8 @@ export default function FFHubPage() {
                       backgroundSize: "28px 28px",
                     }}
                   />
+
+                  {/* badge */}
                   <span
                     className="absolute left-3 top-3 rounded-md px-2 py-1 text-[9px] font-black uppercase tracking-widest backdrop-blur-md"
                     style={{
@@ -205,6 +215,22 @@ export default function FFHubPage() {
                   >
                     {g.badge}
                   </span>
+
+                  {/* featured badge */}
+                  {g.featured && (
+                    <span
+                      className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-md px-2 py-1 text-[9px] font-black uppercase tracking-widest"
+                      style={{
+                        background: "linear-gradient(135deg,#22d3ee,#a78bfa)",
+                        color: "#0a0d14",
+                      }}
+                    >
+                      <Sparkles size={9} />
+                      NEW
+                    </span>
+                  )}
+
+                  {/* emoji */}
                   <span className="absolute bottom-4 right-4 text-5xl transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-6">
                     {g.emoji}
                   </span>
