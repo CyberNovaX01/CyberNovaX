@@ -1,3 +1,6 @@
+export const META_VERSION = "v2026.3";
+export const META_UPDATED = "16 Sep 2026";
+
 export type RankPhase = {
   id: string;
   name: string;
