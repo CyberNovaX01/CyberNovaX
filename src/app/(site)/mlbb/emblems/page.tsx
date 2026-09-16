@@ -156,7 +156,6 @@ export default function EmblemsPage() {
     <>
       <MoodSetter mood="mlbb" />
 
-      {/* HEADER */}
       <section className="relative overflow-hidden border-b border-line">
         <div
           className="absolute inset-0"
@@ -201,7 +200,7 @@ export default function EmblemsPage() {
                   backgroundClip: "text",
                 }}
               >
-                {km ? "Emblems" : "Emblems"}
+                Emblems
               </span>
             </h1>
             <p className="mt-3 max-w-2xl text-sm text-muted">
@@ -213,7 +212,6 @@ export default function EmblemsPage() {
         </div>
       </section>
 
-      {/* INFO NOTE */}
       <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
         <FadeIn>
           <div className="flex items-start gap-3 rounded-xl border border-line bg-surface/50 p-4">
@@ -225,14 +223,13 @@ export default function EmblemsPage() {
             </span>
             <div className="text-xs leading-relaxed text-muted">
               {km
-                ? "💡 Emblem គឺជា ប្រព័ន្ធ buff របស់ MLBB។ ជ្រើស emblem set តាម role hero រួចជ្រើស talent 3 ដែលសមស្របនឹងរបៀបលេងរបស់អ្នក។"
+                ? "💡 Emblem គឺជាប្រព័ន្ធ buff របស់ MLBB។ ជ្រើស emblem set តាម role hero រួចជ្រើស talent 3 ដែលសមស្របនឹងរបៀបលេងរបស់អ្នក។"
                 : "💡 Emblems are MLBB's buff system. Choose an emblem set based on your hero's role, then pick 3 talents that suit your playstyle."}
             </div>
           </div>
         </FadeIn>
       </section>
 
-      {/* EMBLEM GRID */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
         <div className="grid gap-5 lg:grid-cols-2">
           {EMBLEMS.map((e, i) => {
@@ -246,7 +243,6 @@ export default function EmblemsPage() {
                     boxShadow: "0 20px 60px -30px " + e.color + "88",
                   }}
                 >
-                  {/* Header */}
                   <div
                     className="relative overflow-hidden border-b p-5"
                     style={{
@@ -284,11 +280,10 @@ export default function EmblemsPage() {
                     </div>
                   </div>
 
-                  {/* Talents */}
                   <div className="p-5">
                     <div className="mb-3 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-faint">
                       <Sparkles size={11} />
-                      {km ? "Talents" : "Talents"}
+                      Talents
                     </div>
                     <div className="space-y-2">
                       {(km ? e.talentsKm : e.talentsEn).map((t) => (
@@ -312,7 +307,6 @@ export default function EmblemsPage() {
                       ))}
                     </div>
 
-                    {/* Best for */}
                     <div className="mt-4 border-t border-line pt-4">
                       <div className="mb-2 text-[10px] font-black uppercase tracking-wider text-faint">
                         {km ? "ល្អបំផុតសម្រាប់" : "Best for"}
