@@ -120,7 +120,7 @@ export function Header({
           })}
         </nav>
 
-        {/* QUICK ACTIONS — Always show (icon + text) */}
+        {/* QUICK ACTIONS — icon + text បង្ហាញទាំង mobile + desktop */}
         <div className="flex items-center gap-1 lg:ml-2 lg:border-l lg:border-line lg:pl-2">
           {QUICK_ACTIONS.map((q) => {
             const Icon = q.icon;
@@ -131,7 +131,7 @@ export function Header({
                 href={q.href}
                 title={q.tooltip}
                 aria-label={q.tooltip}
-                className="group relative flex h-9 items-center gap-1.5 rounded-xl border px-2 text-xs font-bold transition-all hover:-translate-y-0.5 sm:px-2.5"
+                className="group relative flex h-9 items-center gap-1.5 rounded-xl border px-2.5 text-xs font-bold transition-all hover:-translate-y-0.5"
                 style={{
                   borderColor: active ? q.color + "80" : "var(--color-line)",
                   background: active ? q.color + "15" : "var(--color-surface)",
@@ -143,10 +143,8 @@ export function Header({
                   size={14}
                   className="transition-transform group-hover:scale-125 group-hover:rotate-12"
                 />
-                {/* SHOW TEXT always */}
-                <span className="hidden xs:inline sm:inline">
-                  {q.labelEn}
-                </span>
+                {/* SHOW TEXT always on all screens */}
+                <span className="inline">{q.labelEn}</span>
 
                 {/* hover glow */}
                 <span
