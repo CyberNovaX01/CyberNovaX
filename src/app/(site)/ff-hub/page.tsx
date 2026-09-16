@@ -83,7 +83,6 @@ const GUIDES: FFGuide[] = [
     descEn: "Strategy and key spots on each map",
     href: "/ff/maps",
     accent: "#6366f1",
-    accent: "#6366f1",
     accent2: "#818cf8",
     badge: "ALL MAPS",
     meta: "Rotation & zone",
