@@ -4,14 +4,11 @@ import { Trophy, ArrowRight, Flame } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { FadeIn } from "@/components/FadeIn";
 import { UNIQUE_HEROES, ROLE_LABELS, TIER_COLORS } from "@/lib/mlbbTierData";
-
 export function MetaTierPreview() {
   const { lang } = useLang();
   const km = lang === "km";
-
   // Top tier heroes (SS + S)
   const topHeroes = UNIQUE_HEROES.filter((h) => h.tier === "SS" || h.tier === "S").slice(0, 12);
-
   return (
     <section className="relative border-b border-line bg-surface/20">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-16">
@@ -35,7 +32,7 @@ export function MetaTierPreview() {
                     backgroundClip: "text",
                   }}
                 >
-                  {km ? "Heroes" : "Heroes"}
+                  Heroes
                 </span>
               </h2>
               <p className="mt-2 max-w-xl text-sm text-muted">
@@ -54,7 +51,6 @@ export function MetaTierPreview() {
             </Link>
           </div>
         </FadeIn>
-
         {/* Heroes grid */}
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
           {topHeroes.map((h, i) => {
@@ -66,19 +62,22 @@ export function MetaTierPreview() {
                   href={"/mlbb/" + h.id}
                   className="group flex flex-col items-center gap-2 text-center"
                 >
-                  {/* Circle with initial */}
+                  {/* Circle with hero image */}
                   <div className="relative">
                     <span
-                      className="grid h-16 w-16 place-items-center rounded-full text-xl font-black transition-all group-hover:scale-110 sm:h-20 sm:w-20 sm:text-2xl"
+                      className="block h-16 w-16 overflow-hidden rounded-full transition-all group-hover:scale-110 sm:h-20 sm:w-20"
                       style={{
-                        background:
-                          "linear-gradient(135deg, " + roleColor + "40 0%, " + roleColor + "15 100%)",
-                        color: roleColor,
+                        background: "linear-gradient(135deg, " + roleColor + "40 0%, " + roleColor + "15 100%)",
                         boxShadow:
                           "0 0 0 2px " + tierColor + "80, 0 0 0 4px " + roleColor + "40, 0 15px 30px -15px " + roleColor + "88",
                       }}
                     >
-                      {h.initial}
+                      <img
+                        src={"/images/mlbb/heroes/" + h.id + ".png"}
+                        alt={h.name}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
                     </span>
                     {/* Tier badge */}
                     <span
