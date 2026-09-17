@@ -19,6 +19,18 @@ type Emblem = {
   bestForEn: string[];
 };
 
+const TALENT_SLUG_OVERRIDES: Record<string, string> = {
+  "Weapon Master": "weapons-master",
+  "Inspire": "talent-inspire",
+};
+function talentSlug(name: string): string {
+  if (TALENT_SLUG_OVERRIDES[name]) return TALENT_SLUG_OVERRIDES[name];
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 const EMBLEMS: Emblem[] = [
   {
     id: "assassin",
@@ -233,7 +245,6 @@ export default function EmblemsPage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
         <div className="grid gap-5 lg:grid-cols-2">
           {EMBLEMS.map((e, i) => {
-            const Icon = e.icon;
             return (
               <FadeIn key={e.id} delay={i * 60}>
                 <div
@@ -264,11 +275,10 @@ export default function EmblemsPage() {
                           boxShadow: "0 0 0 1px " + e.color + "55",
                         }}
                       >
-                        <Icon size={26} strokeWidth={2.2} />
+                        <img src={"/images/mlbb/emblems/" + e.id + ".png"} alt={e.name} className="h-full w-full object-contain" />
                       </span>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-2xl">{e.emoji}</span>
                           <h2 className="text-xl font-black tracking-tight">
                             {e.name}
                           </h2>
@@ -291,10 +301,9 @@ export default function EmblemsPage() {
                           key={t.name}
                           className="flex items-start gap-3 rounded-lg border border-line bg-black/20 p-3"
                         >
-                          <span
-                            className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full"
-                            style={{ background: e.color }}
-                          />
+                          <div className="mt-0.5 h-8 w-8 shrink-0 overflow-hidden rounded-lg border" style={{ borderColor: e.color + "55", background: e.color + "15" }}>
+                            <img src={"/images/mlbb/talents/" + talentSlug(t.name) + ".png"} alt={t.name} className="h-full w-full object-contain" />
+                          </div>
                           <div className="min-w-0 flex-1">
                             <div className="text-xs font-bold" style={{ color: e.color }}>
                               {t.name}
