@@ -297,7 +297,7 @@ export default function BuildsPage() {
                   <div className="grid gap-3 border-b border-line bg-black/10 p-5 sm:grid-cols-2">
                     <div className="flex items-center gap-3 rounded-xl border border-line bg-black/20 p-3">
                       <div className="h-12 w-12 shrink-0 overflow-hidden rounded-xl" style={{ background: color + "20" }}>
-                        <ImageWithFallback src={"/images/mlbb/emblems/" + variant.emblem + ".svg"} alt={variant.emblem} fallback={EMBLEM_ICONS[variant.emblem]} />
+                        <ImageWithFallback src={"/images/mlbb/emblems/" + variant.emblem + ".png"} alt={variant.emblem} fallback={EMBLEM_ICONS[variant.emblem]} />
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2"><Gem size={12} style={{ color }} /><span className="text-[10px] font-black uppercase tracking-wider text-faint">EMBLEM</span></div>
@@ -309,7 +309,7 @@ export default function BuildsPage() {
                       <div className="flex gap-1.5">
                         {variant.spells.map((s, si) => (
                           <div key={si} className="h-12 w-12 shrink-0 overflow-hidden rounded-xl" style={{ background: color + "20" }}>
-                            <ImageWithFallback src={"/images/mlbb/spells/" + itemSlug(s) + ".svg"} alt={s} fallback="S" />
+                            <ImageWithFallback src={"/images/mlbb/spells/" + itemSlug(s) + ".png"} alt={s} fallback="S" />
                           </div>
                         ))}
                       </div>

@@ -1,4 +1,4 @@
-﻿export type MLBBRole =
+export type MLBBRole =
   | "tank"
   | "fighter"
   | "assassin"
@@ -95,7 +95,7 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "aldous",     name: "Aldous",     initial: "A", role: "fighter", lane: "exp", tier: "B" },
   { id: "freya",      name: "Freya",      initial: "F", role: "fighter", lane: "exp", tier: "B" },
   { id: "argus",      name: "Argus",      initial: "A", role: "fighter", lane: "exp", tier: "C" },
-  { id: "lapu-lapu",  name: "Lapu-Lapu",  initial: "L", role: "fighter", lane: "exp", tier: "B" },
+  { id: "lapu_lapu",  name: "Lapu-Lapu",  initial: "L", role: "fighter", lane: "exp", tier: "B" },
 
   // â•â•â• ASSASSIN (20) â•â•â•
   { id: "joy",        name: "Joy",        initial: "J", role: "assassin", lane: "jungle", tier: "SS" },
@@ -162,7 +162,7 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "karrie",     name: "Karrie",     initial: "K", role: "marksman", lane: "gold", tier: "A" },
   { id: "granger",    name: "Granger",    initial: "G", role: "marksman", lane: "gold", tier: "A" },
   { id: "natan",      name: "Natan",      initial: "N", role: "marksman", lane: "gold", tier: "A" },
-  { id: "yi_sun-shin",name: "Yi Sun-shin",initial: "Y", role: "marksman", lane: "gold", tier: "A" },
+  { id: "yi_sun_shin",name: "Yi Sun-shin",initial: "Y", role: "marksman", lane: "gold", tier: "A" },
   { id: "bruno",      name: "Bruno",      initial: "B", role: "marksman", lane: "gold", tier: "A" },
   { id: "moskov",     name: "Moskov",     initial: "M", role: "marksman", lane: "gold", tier: "A" },
   { id: "irithel",    name: "Irithel",    initial: "I", role: "marksman", lane: "gold", tier: "A" },
