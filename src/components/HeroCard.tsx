@@ -2,21 +2,20 @@
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { useState } from "react";
+
 export type Role = "Assassin" | "Tank" | "Mage" | "Marksman" | "Fighter" | "Support";
+
 export const ROLE_COLORS: Record<Role, string> = {
   Assassin: "#ef4444", Tank: "#3b82f6", Mage: "#a855f7",
   Marksman: "#f59e0b", Fighter: "#10b981", Support: "#06b6d4",
 };
-// Fandom CDN — ឥតគិតថ្លៃ ប៉ុន្តែខ្លះអាចខូច
-function fandomUrl(heroId: string) {
-  const name = heroId.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join("_");
-  return "https://mobile-legends.fandom.com/wiki/Special:FilePath/" + name + ".png";
-}
+
 export function HeroCard({ id, name, role, difficulty, imageUrl }:
   { id: string; name: string; role: Role; difficulty: 1 | 2 | 3; imageUrl: string | null }) {
   const color = ROLE_COLORS[role];
   const [imgOk, setImgOk] = useState(true);
-  const src = imageUrl || fandomUrl(id);
+  const src = imageUrl || "/images/mlbb/heroes/" + id + ".png";
+
   return (
     <Link href={"/mlbb/" + id}
       className="group relative block aspect-[3/4] overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1.5 hover:border-line-2"

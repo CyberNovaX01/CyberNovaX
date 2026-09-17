@@ -1,4 +1,4 @@
-export type MLBBRole =
+﻿export type MLBBRole =
   | "tank"
   | "fighter"
   | "assassin"
@@ -29,13 +29,12 @@ export const ROLE_LABELS: Record<MLBBRole, { en: string; km: string; color: stri
 };
 
 export const LANE_LABELS: Record<MLBBLane, { en: string; km: string; emoji: string }> = {
-  roam:   { en: "Roam",     km: "Roam",     emoji: "🛡️" },
-  exp:    { en: "Exp Lane", km: "Exp Lane", emoji: "⚔️" },
-  jungle: { en: "Jungle",   km: "Jungle",   emoji: "🌲" },
-  mid:    { en: "Mid Lane", km: "Mid Lane", emoji: "✨" },
-  gold:   { en: "Gold Lane",km: "Gold Lane",emoji: "🏹" },
+  roam:   { en: "Roam",     km: "រុករក",      emoji: "🛡️" },
+  exp:    { en: "Exp Lane", km: "ផ្លូវ EXP",   emoji: "⚔️" },
+  jungle: { en: "Jungle",   km: "ព្រៃ",       emoji: "🌲" },
+  mid:    { en: "Mid Lane", km: "ផ្លូវកណ្តាល", emoji: "✨" },
+  gold:   { en: "Gold Lane",km: "ផ្លូវមាស",   emoji: "💰" },
 };
-
 export const TIER_COLORS: Record<MLBBTier, string> = {
   SS: "#f5c542",
   S:  "#ef4444",
@@ -48,7 +47,7 @@ export const TIER_ORDER: MLBBTier[] = ["SS", "S", "A", "B", "C"];
 
 // 133 heroes as of 2026
 export const MLBB_HEROES: MLBBHero[] = [
-  // ═══ TANK (18) ═══
+  // â•â•â• TANK (18) â•â•â•
   { id: "atlas",      name: "Atlas",      initial: "A", role: "tank", lane: "roam", tier: "SS" },
   { id: "belerick",   name: "Belerick",   initial: "B", role: "tank", lane: "roam", tier: "SS" },
   { id: "fredrinn",   name: "Fredrinn",   initial: "F", role: "tank", lane: "exp",  tier: "SS" },
@@ -68,7 +67,7 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "edith",      name: "Edith",      initial: "E", role: "tank", lane: "exp",  tier: "A" },
   { id: "barats",     name: "Barats",     initial: "B", role: "tank", lane: "exp",  tier: "B" },
 
-  // ═══ FIGHTER (28) ═══
+  // â•â•â• FIGHTER (28) â•â•â•
   { id: "arlott",     name: "Arlott",     initial: "A", role: "fighter", lane: "exp", tier: "SS" },
   { id: "paquito",    name: "Paquito",    initial: "P", role: "fighter", lane: "exp", tier: "SS" },
   { id: "yu_zhong",   name: "Yu Zhong",   initial: "Y", role: "fighter", lane: "exp", tier: "S" },
@@ -80,7 +79,7 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "silvanna",   name: "Silvanna",   initial: "S", role: "fighter", lane: "exp", tier: "A" },
   { id: "thamuz",     name: "Thamuz",     initial: "T", role: "fighter", lane: "exp", tier: "A" },
   { id: "terizla",    name: "Terizla",    initial: "T", role: "fighter", lane: "exp", tier: "A" },
-  { id: "x_borg",     name: "X.Borg",     initial: "X", role: "fighter", lane: "exp", tier: "A" },
+  { id: "xborg",     name: "X.Borg",     initial: "X", role: "fighter", lane: "exp", tier: "A" },
   { id: "jawhead",    name: "Jawhead",    initial: "J", role: "fighter", lane: "exp", tier: "A" },
   { id: "guinevere",  name: "Guinevere",  initial: "G", role: "fighter", lane: "exp", tier: "A" },
   { id: "leomord",    name: "Leomord",    initial: "L", role: "fighter", lane: "exp", tier: "A" },
@@ -96,9 +95,9 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "aldous",     name: "Aldous",     initial: "A", role: "fighter", lane: "exp", tier: "B" },
   { id: "freya",      name: "Freya",      initial: "F", role: "fighter", lane: "exp", tier: "B" },
   { id: "argus",      name: "Argus",      initial: "A", role: "fighter", lane: "exp", tier: "C" },
-  { id: "lapu_lapu",  name: "Lapu-Lapu",  initial: "L", role: "fighter", lane: "exp", tier: "B" },
+  { id: "lapu-lapu",  name: "Lapu-Lapu",  initial: "L", role: "fighter", lane: "exp", tier: "B" },
 
-  // ═══ ASSASSIN (20) ═══
+  // â•â•â• ASSASSIN (20) â•â•â•
   { id: "joy",        name: "Joy",        initial: "J", role: "assassin", lane: "jungle", tier: "SS" },
   { id: "fanny",      name: "Fanny",      initial: "F", role: "assassin", lane: "jungle", tier: "SS" },
   { id: "ling",       name: "Ling",       initial: "L", role: "assassin", lane: "jungle", tier: "S" },
@@ -120,7 +119,7 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "suyou",      name: "Suyou",      initial: "S", role: "assassin", lane: "jungle", tier: "S" },
   { id: "lukas",      name: "Lukas",      initial: "L", role: "assassin", lane: "jungle", tier: "A" },
 
-  // ═══ MAGE (30) ═══
+  // â•â•â• MAGE (30) â•â•â•
   { id: "valentina",  name: "Valentina",  initial: "V", role: "mage", lane: "mid", tier: "SS" },
   { id: "valir",      name: "Valir",      initial: "V", role: "mage", lane: "mid", tier: "SS" },
   { id: "pharsa",     name: "Pharsa",     initial: "P", role: "mage", lane: "mid", tier: "S" },
@@ -132,7 +131,7 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "luo_yi",     name: "Luo Yi",     initial: "L", role: "mage", lane: "mid", tier: "S" },
   { id: "zhuxin",     name: "Zhuxin",     initial: "Z", role: "mage", lane: "mid", tier: "S" },
   { id: "novaria",    name: "Novaria",    initial: "N", role: "mage", lane: "mid", tier: "S" },
-  { id: "chang_e",    name: "Chang'e",    initial: "C", role: "mage", lane: "mid", tier: "A" },
+  { id: "change",    name: "Chang'e",    initial: "C", role: "mage", lane: "mid", tier: "A" },
   { id: "harith",     name: "Harith",     initial: "H", role: "mage", lane: "mid", tier: "A" },
   { id: "lylia",      name: "Lylia",      initial: "L", role: "mage", lane: "mid", tier: "A" },
   { id: "gord",       name: "Gord",       initial: "G", role: "mage", lane: "mid", tier: "A" },
@@ -146,24 +145,24 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "aurora",     name: "Aurora",     initial: "A", role: "mage", lane: "mid", tier: "B" },
   { id: "alice",      name: "Alice",      initial: "A", role: "mage", lane: "exp", tier: "B" },
   { id: "faramis",    name: "Faramis",    initial: "F", role: "mage", lane: "roam",tier: "B" },
-  { id: "harrow",     name: "Harrow",     initial: "H", role: "mage", lane: "mid", tier: "B" },
-  { id: "yve_",       name: "Yve",        initial: "Y", role: "mage", lane: "mid", tier: "S" },
+  { id: "harith",     name: "Harrow",     initial: "H", role: "mage", lane: "mid", tier: "B" },
+  { id: "yve",       name: "Yve",        initial: "Y", role: "mage", lane: "mid", tier: "S" },
   { id: "kimmy",      name: "Kimmy",      initial: "K", role: "mage", lane: "gold",tier: "B" },
   { id: "esmeralda",  name: "Esmeralda",  initial: "E", role: "mage", lane: "exp", tier: "B" },
-  { id: "gord_",      name: "Gord",       initial: "G", role: "mage", lane: "mid", tier: "A" },
+  { id: "gord",      name: "Gord",       initial: "G", role: "mage", lane: "mid", tier: "A" },
 
-  // ═══ MARKSMAN (21) ═══
+  // â•â•â• MARKSMAN (21) â•â•â•
   { id: "beatrix",    name: "Beatrix",    initial: "B", role: "marksman", lane: "gold", tier: "SS" },
   { id: "melissa",    name: "Melissa",    initial: "M", role: "marksman", lane: "gold", tier: "SS" },
   { id: "brody",      name: "Brody",      initial: "B", role: "marksman", lane: "gold", tier: "S" },
   { id: "claude",     name: "Claude",     initial: "C", role: "marksman", lane: "gold", tier: "S" },
   { id: "wanwan",     name: "Wanwan",     initial: "W", role: "marksman", lane: "gold", tier: "S" },
-  { id: "bea",        name: "Bea",        initial: "B", role: "marksman", lane: "gold", tier: "S" },
+  { id: "beatrix",        name: "Bea",        initial: "B", role: "marksman", lane: "gold", tier: "S" },
   { id: "ixia",       name: "Ixia",       initial: "I", role: "marksman", lane: "gold", tier: "S" },
   { id: "karrie",     name: "Karrie",     initial: "K", role: "marksman", lane: "gold", tier: "A" },
   { id: "granger",    name: "Granger",    initial: "G", role: "marksman", lane: "gold", tier: "A" },
   { id: "natan",      name: "Natan",      initial: "N", role: "marksman", lane: "gold", tier: "A" },
-  { id: "yi_sun_shin",name: "Yi Sun-shin",initial: "Y", role: "marksman", lane: "gold", tier: "A" },
+  { id: "yi_sun-shin",name: "Yi Sun-shin",initial: "Y", role: "marksman", lane: "gold", tier: "A" },
   { id: "bruno",      name: "Bruno",      initial: "B", role: "marksman", lane: "gold", tier: "A" },
   { id: "moskov",     name: "Moskov",     initial: "M", role: "marksman", lane: "gold", tier: "A" },
   { id: "irithel",    name: "Irithel",    initial: "I", role: "marksman", lane: "gold", tier: "A" },
@@ -172,10 +171,10 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "layla",      name: "Layla",      initial: "L", role: "marksman", lane: "gold", tier: "B" },
   { id: "miya",       name: "Miya",       initial: "M", role: "marksman", lane: "gold", tier: "B" },
   { id: "roger",      name: "Roger",      initial: "R", role: "marksman", lane: "jungle", tier: "B" },
-  { id: "popol",      name: "Popol and Kupa", initial: "P", role: "marksman", lane: "gold", tier: "B" },
-  { id: "moscow",     name: "Moskov",     initial: "M", role: "marksman", lane: "gold", tier: "A" },
+  { id: "popol_and_kupa",      name: "Popol and Kupa", initial: "P", role: "marksman", lane: "gold", tier: "B" },
+  { id: "moskov",     name: "Moskov",     initial: "M", role: "marksman", lane: "gold", tier: "A" },
 
-  // ═══ SUPPORT (16) ═══
+  // â•â•â• SUPPORT (16) â•â•â•
   { id: "mathilda",   name: "Mathilda",   initial: "M", role: "support", lane: "roam", tier: "SS" },
   { id: "angela",     name: "Angela",     initial: "A", role: "support", lane: "roam", tier: "SS" },
   { id: "estes",      name: "Estes",      initial: "E", role: "support", lane: "roam", tier: "S" },
@@ -183,15 +182,29 @@ export const MLBB_HEROES: MLBBHero[] = [
   { id: "chip",       name: "Chip",       initial: "C", role: "support", lane: "roam", tier: "S" },
   { id: "floryn",     name: "Floryn",     initial: "F", role: "support", lane: "roam", tier: "S" },
   { id: "diggie",     name: "Diggie",     initial: "D", role: "support", lane: "roam", tier: "A" },
-  { id: "lolita_",    name: "Lolita",     initial: "L", role: "support", lane: "roam", tier: "A" },
-  { id: "minotaur_",  name: "Minotaur",   initial: "M", role: "support", lane: "roam", tier: "A" },
-  { id: "rafaela_",   name: "Rafaela",    initial: "R", role: "support", lane: "roam", tier: "S" },
-  { id: "estes_",     name: "Estes",      initial: "E", role: "support", lane: "roam", tier: "S" },
-  { id: "angela_",    name: "Angela",     initial: "A", role: "support", lane: "roam", tier: "SS" },
-  { id: "mathilda_",  name: "Mathilda",   initial: "M", role: "support", lane: "roam", tier: "SS" },
-  { id: "chip_",      name: "Chip",       initial: "C", role: "support", lane: "roam", tier: "S" },
-  { id: "floryn_",    name: "Floryn",     initial: "F", role: "support", lane: "roam", tier: "S" },
-  { id: "diggie_",    name: "Diggie",     initial: "D", role: "support", lane: "roam", tier: "A" },
+  { id: "lolita",    name: "Lolita",     initial: "L", role: "support", lane: "roam", tier: "A" },
+  { id: "minotaur",  name: "Minotaur",   initial: "M", role: "support", lane: "roam", tier: "A" },
+  { id: "rafaela",   name: "Rafaela",    initial: "R", role: "support", lane: "roam", tier: "S" },
+  { id: "estes",     name: "Estes",      initial: "E", role: "support", lane: "roam", tier: "S" },
+  { id: "angela",    name: "Angela",     initial: "A", role: "support", lane: "roam", tier: "SS" },
+  { id: "mathilda",  name: "Mathilda",   initial: "M", role: "support", lane: "roam", tier: "SS" },
+  { id: "chip",      name: "Chip",       initial: "C", role: "support", lane: "roam", tier: "S" },
+  { id: "floryn",    name: "Floryn",     initial: "F", role: "support", lane: "roam", tier: "S" },
+  { id: "diggie",    name: "Diggie",     initial: "D", role: "support", lane: "roam", tier: "A" },
+  { id: "akai",       name: "Akai",       initial: "A", role: "tank",     lane: "roam",   tier: "B" },
+  { id: "alpha",      name: "Alpha",      initial: "A", role: "fighter",  lane: "exp",    tier: "A" },
+  { id: "bane",       name: "Bane",       initial: "B", role: "fighter",  lane: "exp",    tier: "B" },
+  { id: "carmilla",   name: "Carmilla",   initial: "C", role: "support",  lane: "roam",   tier: "A" },
+  { id: "cici",       name: "Cici",       initial: "C", role: "fighter",  lane: "exp",    tier: "B" },
+  { id: "hirara",     name: "Hirara",     initial: "H", role: "mage",     lane: "mid",    tier: "B" },
+  { id: "kaja",       name: "Kaja",       initial: "K", role: "support",  lane: "roam",   tier: "A" },
+  { id: "kalea",      name: "Kalea",      initial: "K", role: "support",  lane: "roam",   tier: "B" },
+  { id: "marcel",     name: "Marcel",     initial: "M", role: "assassin", lane: "jungle", tier: "B" },
+  { id: "minsitthar", name: "Minsitthar", initial: "M", role: "fighter",  lane: "exp",    tier: "A" },
+  { id: "obsidia",    name: "Obsidia",    initial: "O", role: "marksman", lane: "gold",   tier: "B" },
+  { id: "sora",       name: "Sora",       initial: "S", role: "assassin", lane: "jungle", tier: "B" },
+  { id: "zetian",     name: "Zetian",     initial: "Z", role: "mage",     lane: "mid",    tier: "A" },
+  { id: "zilong",     name: "Zilong",     initial: "Z", role: "fighter",  lane: "exp",    tier: "A" },
 ];
 
 // Remove duplicates by id

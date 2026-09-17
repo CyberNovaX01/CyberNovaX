@@ -60,118 +60,111 @@ export default function MLBBTierPage() {
           </Link>
 
           <FadeIn>
-            <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em]" style={{ color: "#3b82f6" }}>
-              <Trophy size={13} />
-              TIER LIST
-            </div>
-            <h1 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-              <span className="text-white">Mobile Legends</span>{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #3b82f6 0%, #a78bfa 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {km ? "Tier List" : "Tier List"}
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1">
+              <Trophy size={12} className="text-blue-400" />
+              <span className="text-[10px] font-black uppercase tracking-wider text-blue-400">
+                {km ? "Tier List ផ្លូវការ" : "Official Tier List"}
               </span>
+            </div>
+            <h1 className="mb-3 font-display text-4xl font-black tracking-tight sm:text-5xl">
+              {km ? "Tier List MLBB" : "MLBB Tier List"}
             </h1>
-            <p className="mt-3 max-w-2xl text-sm text-muted">
+            <p className="mb-8 max-w-2xl text-sm text-muted">
               {km
-                ? getHeroCount() + " heroes — ចំណាត់ថ្នាក់តាម Meta បច្ចុប្បន្ន។ SS គឺកំពូលបំផុត។"
-                : getHeroCount() + " heroes — ranked by current meta. SS is the very top."}
+                ? "ចំណាត់ថ្នាក់ Hero តាម Meta បច្ចុប្បន្ន — ជ្រើស Hero តាម Role និង Lane"
+                : "Hero rankings based on current meta — filter by Role and Lane"}
             </p>
+          </FadeIn>
+
+          {/* FILTERS */}
+          <FadeIn>
+            <div className="rounded-2xl border border-line bg-surface/60 p-4 backdrop-blur-sm sm:p-5">
+              {/* Search */}
+              <div className="mb-4">
+                <div className="relative">
+                  <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-faint" />
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder={km ? "ស្វែងរក Hero..." : "Search hero..."}
+                    className="w-full rounded-lg border border-line bg-bg/60 py-2 pl-9 pr-3 text-sm outline-none transition-colors focus:border-blue-500"
+                  />
+                </div>
+              </div>
+
+              {/* Role */}
+              <div>
+                <div className="mb-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-faint">
+                  <Filter size={11} />
+                  Role
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {ROLES.map((r) => {
+                    const active = role === r;
+                    const label = r === "all" ? (km ? "ទាំងអស់" : "All") : (km ? ROLE_LABELS[r].km : ROLE_LABELS[r].en);
+                    const color = r === "all" ? "#3b82f6" : ROLE_LABELS[r].color;
+                    return (
+                      <button
+                        key={r}
+                        onClick={() => setRole(r)}
+                        className="rounded-full border px-3 py-1 text-xs font-bold transition-all"
+                        style={{
+                          borderColor: active ? color : "var(--color-line)",
+                          color: active ? color : "var(--color-muted)",
+                          background: active ? color + "22" : "transparent",
+                        }}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Lane */}
+              <div className="mt-4">
+                <div className="mb-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-faint">
+                  <Filter size={11} />
+                  Lane
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {LANES.map((l) => {
+                    const active = lane === l;
+                    const label = l === "all" ? (km ? "ទាំងអស់" : "All") : (km ? LANE_LABELS[l].km : LANE_LABELS[l].en);
+                    return (
+                      <button
+                        key={l}
+                        onClick={() => setLane(l)}
+                        className="rounded-full border px-3 py-1 text-xs font-bold transition-all"
+                        style={{
+                          borderColor: active ? "#3b82f6" : "var(--color-line)",
+                          color: active ? "#3b82f6" : "var(--color-muted)",
+                          background: active ? "rgba(59,130,246,0.15)" : "transparent",
+                        }}
+                      >
+                        {l !== "all" && <span className="mr-1">{LANE_LABELS[l].emoji}</span>}
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Result count */}
+              <div className="mt-4 flex items-center gap-1.5 border-t border-line pt-3 text-[11px] text-faint">
+                <Info size={11} />
+                {km
+                  ? "បង្ហាញ " + filtered.length + " / " + getHeroCount() + " heroes"
+                  : "Showing " + filtered.length + " / " + getHeroCount() + " heroes"}
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* FILTERS */}
-      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <FadeIn>
-          <div className="space-y-4 rounded-2xl border border-line bg-surface/50 p-4 sm:p-5">
-            {/* Search */}
-            <div className="relative">
-              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-faint" />
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder={km ? "ស្វែងរក hero..." : "Search hero..."}
-                className="w-full rounded-xl border border-line bg-black/30 py-2.5 pl-10 pr-3 text-sm outline-none transition-colors focus:border-blue-400/60"
-              />
-            </div>
-
-            {/* Role */}
-            <div>
-              <div className="mb-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-faint">
-                <Filter size={11} />
-                {km ? "Role" : "Role"}
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {ROLES.map((r) => {
-                  const active = role === r;
-                  const label = r === "all" ? (km ? "ទាំងអស់" : "All") : (km ? ROLE_LABELS[r].km : ROLE_LABELS[r].en);
-                  const color = r === "all" ? "#3b82f6" : ROLE_LABELS[r].color;
-                  return (
-                    <button
-                      key={r}
-                      onClick={() => setRole(r)}
-                      className="rounded-full border px-3 py-1 text-xs font-bold transition-all"
-                      style={{
-                        borderColor: active ? color : "var(--color-line)",
-                        color: active ? color : "var(--color-muted)",
-                        background: active ? color + "22" : "transparent",
-                      }}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Lane */}
-            <div>
-              <div className="mb-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-faint">
-                <Filter size={11} />
-                {km ? "Lane" : "Lane"}
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {LANES.map((l) => {
-                  const active = lane === l;
-                  const label = l === "all" ? (km ? "ទាំងអស់" : "All") : (km ? LANE_LABELS[l].km : LANE_LABELS[l].en);
-                  return (
-                    <button
-                      key={l}
-                      onClick={() => setLane(l)}
-                      className="rounded-full border px-3 py-1 text-xs font-bold transition-all"
-                      style={{
-                        borderColor: active ? "#3b82f6" : "var(--color-line)",
-                        color: active ? "#3b82f6" : "var(--color-muted)",
-                        background: active ? "rgba(59,130,246,0.15)" : "transparent",
-                      }}
-                    >
-                      {l !== "all" && <span className="mr-1">{LANE_LABELS[l].emoji}</span>}
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Result count */}
-            <div className="flex items-center gap-1.5 border-t border-line pt-3 text-[11px] text-faint">
-              <Info size={11} />
-              {km
-                ? "បង្ហាញ " + filtered.length + " / " + getHeroCount() + " heroes"
-                : "Showing " + filtered.length + " / " + getHeroCount() + " heroes"}
-            </div>
-          </div>
-        </FadeIn>
-      </section>
-
       {/* TIER BLOCKS */}
-      <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6">
+      <section className="mx-auto max-w-7xl px-4 pb-14 pt-8 sm:px-6">
         <div className="space-y-6">
           {TIER_ORDER.map((tier) => {
             const heroes = grouped[tier];
@@ -206,7 +199,7 @@ export default function MLBBTierPage() {
                       {tier}
                     </span>
                     <span className="text-xs font-bold text-muted">
-                      {heroes.length} {km ? "heroes" : "heroes"}
+                      {heroes.length} heroes
                     </span>
                   </div>
 
@@ -220,18 +213,21 @@ export default function MLBBTierPage() {
                           href={"/mlbb/" + h.id}
                           className="group flex flex-col items-center gap-2 text-center"
                         >
-                          {/* Circle with initial */}
-                          <span
-                            className="grid h-16 w-16 place-items-center rounded-full text-xl font-black transition-all group-hover:scale-110"
+                          {/* ★ រូបភាព Hero ជំនួសអក្សរ */}
+                          <div
+                            className="relative h-16 w-16 overflow-hidden rounded-full transition-all group-hover:scale-110"
                             style={{
-                              background: "linear-gradient(135deg, " + roleColor + "40 0%, " + roleColor + "15 100%)",
-                              color: roleColor,
                               boxShadow:
                                 "0 0 0 2px " + color + "80, 0 0 0 4px " + roleColor + "40, 0 10px 25px -12px " + roleColor + "88",
                             }}
                           >
-                            {h.initial}
-                          </span>
+                            <img
+                              src={"/images/mlbb/heroes/" + h.id + ".png"}
+                              alt={h.name}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
                           <span className="text-[10px] font-bold leading-tight text-muted transition-colors group-hover:text-fg">
                             {h.name}
                           </span>
@@ -249,7 +245,7 @@ export default function MLBBTierPage() {
         <FadeIn>
           <div className="mt-8 rounded-xl border border-line bg-surface/40 p-4 text-center text-xs text-faint">
             {km
-              ? "💡 Tier List នេះផ្អែកលើ Meta បច្ចុប្បន្ន។ ប្រើវាជាការណែនាំ — ជ្រើស hero ដែលអ្នកលេងបានល្អ។"
+              ? "💡 Tier List នេះផ្អែកលើ Meta បច្ចុប្បន្ន។ ប្រើវាជាការណែនាំ — ជ្រើស hero ដែលបងលេងបានល្អ។"
               : "💡 This tier list is based on the current meta. Use it as a guide — pick heroes you play well."}
           </div>
         </FadeIn>

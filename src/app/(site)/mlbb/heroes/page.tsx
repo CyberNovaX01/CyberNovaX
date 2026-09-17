@@ -6,6 +6,7 @@ import { MoodSetter } from "@/components/MoodSetter";
 import { FadeIn } from "@/components/FadeIn";
 import { HeroCard, ROLE_COLORS, type Role } from "@/components/HeroCard";
 import { useT } from "@/lib/i18n";
+import { UNIQUE_HEROES } from "@/lib/mlbbTierData";
 
 const ROLE_ICONS: Record<Role, any> = {
   Assassin: Crosshair, Tank: Shield, Mage: Wand2,
@@ -13,46 +14,24 @@ const ROLE_ICONS: Record<Role, any> = {
 };
 const ROLES: Role[] = ["Assassin", "Tank", "Mage", "Marksman", "Fighter", "Support"];
 
+const ROLE_MAP: Record<string, Role> = {
+  assassin: "Assassin", tank: "Tank", mage: "Mage",
+  marksman: "Marksman", fighter: "Fighter", support: "Support",
+};
+
+const TIER_DIFF: Record<string, 1 | 2 | 3> = {
+  SS: 3, S: 3, A: 2, B: 2, C: 1,
+};
+
 type H = { id: string; name: string; role: Role; difficulty: 1 | 2 | 3; imageUrl: string | null };
 
-const HEROES: H[] = [
-  { id: "lancelot", name: "Lancelot", role: "Assassin", difficulty: 3, imageUrl: null },
-  { id: "gusion", name: "Gusion", role: "Assassin", difficulty: 3, imageUrl: null },
-  { id: "ling", name: "Ling", role: "Assassin", difficulty: 3, imageUrl: null },
-  { id: "hayabusa", name: "Hayabusa", role: "Assassin", difficulty: 2, imageUrl: null },
-  { id: "fanny", name: "Fanny", role: "Assassin", difficulty: 3, imageUrl: null },
-  { id: "karina", name: "Karina", role: "Assassin", difficulty: 1, imageUrl: null },
-  { id: "tigreal", name: "Tigreal", role: "Tank", difficulty: 1, imageUrl: null },
-  { id: "franco", name: "Franco", role: "Tank", difficulty: 2, imageUrl: null },
-  { id: "khufra", name: "Khufra", role: "Tank", difficulty: 2, imageUrl: null },
-  { id: "atlas", name: "Atlas", role: "Tank", difficulty: 2, imageUrl: null },
-  { id: "gatotkaca", name: "Gatotkaca", role: "Tank", difficulty: 1, imageUrl: null },
-  { id: "uranus", name: "Uranus", role: "Tank", difficulty: 1, imageUrl: null },
-  { id: "kagura", name: "Kagura", role: "Mage", difficulty: 3, imageUrl: null },
-  { id: "lunox", name: "Lunox", role: "Mage", difficulty: 3, imageUrl: null },
-  { id: "harith", name: "Harith", role: "Mage", difficulty: 2, imageUrl: null },
-  { id: "eudora", name: "Eudora", role: "Mage", difficulty: 1, imageUrl: null },
-  { id: "vale", name: "Vale", role: "Mage", difficulty: 2, imageUrl: null },
-  { id: "pharsa", name: "Pharsa", role: "Mage", difficulty: 2, imageUrl: null },
-  { id: "layla", name: "Layla", role: "Marksman", difficulty: 1, imageUrl: null },
-  { id: "miya", name: "Miya", role: "Marksman", difficulty: 1, imageUrl: null },
-  { id: "bruno", name: "Bruno", role: "Marksman", difficulty: 1, imageUrl: null },
-  { id: "claude", name: "Claude", role: "Marksman", difficulty: 2, imageUrl: null },
-  { id: "wanwan", name: "Wanwan", role: "Marksman", difficulty: 3, imageUrl: null },
-  { id: "beatrix", name: "Beatrix", role: "Marksman", difficulty: 3, imageUrl: null },
-  { id: "chou", name: "Chou", role: "Fighter", difficulty: 3, imageUrl: null },
-  { id: "aldous", name: "Aldous", role: "Fighter", difficulty: 2, imageUrl: null },
-  { id: "yu-zhong", name: "Yu Zhong", role: "Fighter", difficulty: 2, imageUrl: null },
-  { id: "dyrroth", name: "Dyrroth", role: "Fighter", difficulty: 1, imageUrl: null },
-  { id: "paquito", name: "Paquito", role: "Fighter", difficulty: 2, imageUrl: null },
-  { id: "thamuz", name: "Thamuz", role: "Fighter", difficulty: 1, imageUrl: null },
-  { id: "angela", name: "Angela", role: "Support", difficulty: 1, imageUrl: null },
-  { id: "estes", name: "Estes", role: "Support", difficulty: 1, imageUrl: null },
-  { id: "rafaela", name: "Rafaela", role: "Support", difficulty: 1, imageUrl: null },
-  { id: "diggie", name: "Diggie", role: "Support", difficulty: 2, imageUrl: null },
-  { id: "mathilda", name: "Mathilda", role: "Support", difficulty: 2, imageUrl: null },
-  { id: "faramis", name: "Faramis", role: "Support", difficulty: 2, imageUrl: null },
-];
+const HEROES: H[] = UNIQUE_HEROES.map((h) => ({
+  id: h.id,
+  name: h.name,
+  role: ROLE_MAP[h.role] || "Fighter",
+  difficulty: TIER_DIFF[h.tier] || 2,
+  imageUrl: "/images/mlbb/heroes/" + h.id + ".png",
+}));
 
 export default function HeroesPage() {
   const t = useT();
@@ -92,7 +71,9 @@ export default function HeroesPage() {
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
               រក <span className="text-gradient">Hero</span> របស់អ្នក
             </h1>
-            <p className="max-w-xl text-sm text-muted sm:text-base">{t("mlbb.title")}</p>
+            <p className="max-w-xl text-sm text-muted sm:text-base">
+              {HEROES.length} heroes — ជ្រើសតាម Role
+            </p>
           </div>
         </FadeIn>
 
@@ -102,7 +83,7 @@ export default function HeroesPage() {
               <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-faint" />
               <input
                 value={q} onChange={(e) => setQ(e.target.value)}
-                placeholder={t("mlbb.search")}
+                placeholder="ស្វែងរក Hero..."
                 className="w-full rounded-2xl border border-line bg-surface/60 py-3.5 pl-11 pr-11 text-sm text-fg placeholder:text-faint backdrop-blur focus:border-blue/50 focus:outline-none focus:ring-2 focus:ring-blue/20"
               />
               {q && (
@@ -127,7 +108,7 @@ export default function HeroesPage() {
       <section className="mx-auto max-w-7xl px-4 pb-24 pt-10 sm:px-6">
         {filtered.length === 0 && (
           <div className="rounded-2xl border border-line bg-surface/40 p-12 text-center text-muted">
-            {t("mlbb.noResults")} "{q}"
+            រកមិនឃើញ "{q}"
           </div>
         )}
 
