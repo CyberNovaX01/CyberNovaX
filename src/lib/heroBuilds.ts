@@ -459,7 +459,7 @@ export type HeroBuild = {
       items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
   khaleed: { id: "khaleed", name: "Khaleed", variants: [
     { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
-      items: ["tough_boots", "bloodlust_axe", "blade_of_the_heptaseas", "hunter_strike", "queens_wings", "immortality"] } ] },
+      items: ["tough_boots", "war_axe", "blade_of_the_heptaseas", "hunter_strike", "queens_wings", "immortality"] } ] },
   lapu_lapu: { id: "lapu_lapu", name: "Lapu-Lapu", variants: [
     { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
       items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
@@ -497,7 +497,7 @@ export type HeroBuild = {
     { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
       items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
   x_borg: { id: "x_borg", name: "X.Borg", variants: [
-    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Thrill", "Seasoned Hunter", "Impure Rage"], spells: ["flicker"],
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Thrill of the Hunt", "Seasoned Hunter", "Impure Rage"], spells: ["flicker"],
       items: ["tough_boots", "war_axe", "sky_piercer", "immortality", "brute_force_breastplate", "ice_queen_wand"] } ] },
   yin: { id: "yin", name: "Yin", variants: [
     { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
