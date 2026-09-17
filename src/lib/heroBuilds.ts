@@ -252,936 +252,409 @@ export type HeroBuild = {
 };
 
   export const HERO_BUILDS: Record<string, HeroBuild> = {
-  // ============ ADDITIONAL ASSASSINS ============
-  aamon: {
-    id: "aamon", name: "Aamon",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Agility", "Seasoned Hunter", "War Cry"],
-        spells: ["retribution"],
-        items: ["arcane_boots", "genius_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  hanzo: {
-    id: "hanzo", name: "Hanzo",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Master Assassin", "Killing Spree"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] },
-    ],
-  },
-  helcurt: {
-    id: "helcurt", name: "Helcurt",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Master Assassin", "Killing Spree"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] },
-    ],
-  },
-  joy: {
-    id: "joy", name: "Joy",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Seasoned Hunter", "Killing Spree"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] },
-    ],
-  },
-  nolan: {
-    id: "nolan", name: "Nolan",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Seasoned Hunter", "Lethal Ignition"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "sky_piercer", "malefic_roar", "endless_battle", "immortality"] },
-    ],
-  },
-  saber: {
-    id: "saber", name: "Saber",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Master Assassin", "Killing Spree"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] },
-    ],
-  },
-  selena: {
-    id: "selena", name: "Selena",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Rupture", "Weapon Master", "Lethal Ignition"],
-        spells: ["flicker"],
-        items: ["arcane_boots", "starlium_scythe", "lightning_truncheon", "divine_glaive", "holy_crystal", "blood_wings"] },
-    ],
-  },
-  benedetta: {
-    id: "benedetta", name: "Benedetta",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Festival of Blood", "Lethal Ignition"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "malefic_roar", "blade_of_despair", "sea_halberd"] },
-    ],
-  },
-  suyou: {
-    id: "suyou", name: "Suyou",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Seasoned Hunter", "Killing Spree"],
-        spells: ["retribution"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] },
-    ],
-  },
-  julian: {
-    id: "julian", name: "Julian",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Rupture", "Seasoned Hunter", "Lethal Ignition"],
-        spells: ["retribution"],
-        items: ["arcane_boots", "feather_of_heaven", "concentrated_energy", "genius_wand", "holy_crystal", "divine_glaive"] },
-    ],
-  },
-  // ============ ADDITIONAL MARKSMEN ============
-  bruno: {
-    id: "bruno", name: "Bruno",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "blade_of_despair"] },
-    ],
-  },
-  clint: {
-    id: "clint", name: "Clint",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin",
-        talents: ["Rupture", "Master Assassin", "Lethal Ignition"],
-        spells: ["flicker"],
-        items: ["rapid_boots", "endless_battle", "blade_of_despair", "berserkers_fury", "malefic_gun", "great_dragon_spear"] },
-    ],
-  },
-  granger: {
-    id: "granger", name: "Granger",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "blade_of_despair"] },
-    ],
-  },
-  irithel: {
-    id: "irithel", name: "Irithel",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Quantum Charge"],
-        spells: ["sprint"],
-        items: ["swift_boots", "berserkers_fury", "windtalker", "blade_of_despair", "malefic_roar", "rose_gold_meteor"] },
-    ],
-  },
-  karrie: {
-    id: "karrie", name: "Karrie",
-    variants: [
-      { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman",
-        talents: ["Swift", "Weapon Master", "Quantum Charge"],
-        spells: ["inspire"],
-        items: ["corrosion_scythe", "golden_staff", "demon_hunter_sword", "malefic_gun", "rose_gold_meteor", "wind_of_nature"] },
-    ],
-  },
-  kimmy: {
-    id: "kimmy", name: "Kimmy",
-    variants: [
-      { titleEn: "Magic DPS", titleKm: "Magic DPS", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["arcane_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  layla: {
-    id: "layla", name: "Layla",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "blade_of_despair"] },
-    ],
-  },
-  lesley: {
-    id: "lesley", name: "Lesley",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["swift_boots", "berserkers_fury", "haas_claws", "malefic_roar", "blade_of_despair", "immortality"] },
-    ],
-  },
-  moskov: {
-    id: "moskov", name: "Moskov",
-    variants: [
-      { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman",
-        talents: ["Swift", "Weapons Master", "Quantum Charge"],
-        spells: ["inspire"],
-        items: ["corrosion_scythe", "golden_staff", "demon_hunter_sword", "malefic_gun", "wind_of_nature", "immortality"] },
-    ],
-  },
-  natan: {
-    id: "natan", name: "Natan",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["swift_boots", "berserkers_fury", "haas_claws", "windtalker", "malefic_roar", "blade_of_despair"] },
-    ],
-  },
-  popol_and_kupa: {
-    id: "popol_and_kupa", name: "Popol and Kupa",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["retribution"],
-        items: ["swift_boots", "berserkers_fury", "windtalker", "blade_of_despair", "rose_gold_meteor", "malefic_roar"] },
-    ],
-  },
-  yi_sun_shin: {
-    id: "yi_sun_shin", name: "Yi Sun-shin",
-    variants: [
-      { titleEn: "Hybrid", titleKm: "Hybrid", emblem: "assassin",
-        talents: ["Rupture", "Seasoned Hunter", "Killing Spree"],
-        spells: ["retribution"],
-        items: ["tough_boots", "hunter_strike", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "immortality"] },
-    ],
-  },
-  // ============ ADDITIONAL TANKS ============
-  baxia: {
-    id: "baxia", name: "Baxia",
-    variants: [
-      { titleEn: "Roam", titleKm: "រុករក", emblem: "tank",
-        talents: ["Vitality", "Seasoned Hunter", "Concussive Blast"],
-        spells: ["retribution"],
-        items: ["tough_boots", "cursed_helmet", "chastise_pauldron", "radiant_armor", "antique_cuirass", "immortality"] },
-    ],
-  },
-  belerick: {
-    id: "belerick", name: "Belerick",
-    variants: [
-      { titleEn: "Roam", titleKm: "រុករក", emblem: "tank",
-        talents: ["Vitality", "Tenacity", "Brave Smite"],
-        spells: ["vengeance"],
-        items: ["rapid_boots", "dominance_ice", "antique_cuirass", "guardian_helmet", "blade_armor", "radiant_armor"] },
-    ],
-  },
-  grock: {
-    id: "grock", name: "Grock",
-    variants: [
-      { titleEn: "Roam", titleKm: "រុករក", emblem: "tank",
-        talents: ["Vitality", "Tenacity", "Concussive Blast"],
-        spells: ["flicker"],
-        items: ["rapid_boots", "thunder_belt", "dominance_ice", "blade_armor", "guardian_helmet", "antique_cuirass"] },
-    ],
-  },
-  hilda: {
-    id: "hilda", name: "Hilda",
-    variants: [
-      { titleEn: "Roam", titleKm: "រុករក", emblem: "tank",
-        talents: ["Vitality", "Tenacity", "Concussive Blast"],
-        spells: ["flicker"],
-        items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] },
-    ],
-  },
-  johnson: {
-    id: "johnson", name: "Johnson",
-    variants: [
-      { titleEn: "Roam", titleKm: "រុករក", emblem: "tank",
-        talents: ["Vitality", "Tenacity", "Concussive Blast"],
-        spells: ["flicker"],
-        items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] },
-    ],
-  },
-  lolita: {
-    id: "lolita", name: "Lolita",
-    variants: [
-      { titleEn: "Roam", titleKm: "រុករក", emblem: "tank",
-        talents: ["Vitality", "Tenacity", "Concussive Blast"],
-        spells: ["flicker"],
-        items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] },
-    ],
-  },
-  uranus: {
-    id: "uranus", name: "Uranus",
-    variants: [
-      { titleEn: "EXP", titleKm: "EXP", emblem: "tank",
-        talents: ["Vitality", "Tenacity", "Concussive Blast"],
-        spells: ["flicker"],
-        items: ["tough_boots", "oracle", "blade_armor", "thunder_belt", "dominance_ice", "antique_cuirass"] },
-    ],
-  },
-  // ============ ADDITIONAL FIGHTERS ============
-  alucard: {
-    id: "alucard", name: "Alucard",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  badang: {
-    id: "badang", name: "Badang",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  balmond: {
-    id: "balmond", name: "Balmond",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  freya: {
-    id: "freya", name: "Freya",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] },
-    ],
-  },
-  guinevere: {
-    id: "guinevere", name: "Guinevere",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Rupture", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["arcane_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  jawhead: {
-    id: "jawhead", name: "Jawhead",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  khaleed: {
-    id: "khaleed", name: "Khaleed",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "war_axe", "blade_of_the_heptaseas", "hunter_strike", "queens_wings", "immortality"] },
-    ],
-  },
-  lapu_lapu: {
-    id: "lapu_lapu", name: "Lapu-Lapu",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  leomord: {
-    id: "leomord", name: "Leomord",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  martis: {
-    id: "martis", name: "Martis",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  masha: {
-    id: "masha", name: "Masha",
-    variants: [
-      { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "fighter",
-        talents: ["Fatal", "Weapon Master", "Quantum Charge"],
-        spells: ["inspire"],
-        items: ["rapid_boots", "sea_halberd", "haas_claws", "windtalker", "berserkers_fury", "malefic_roar"] },
-    ],
-  },
-  minsitthar: {
-    id: "minsitthar", name: "Minsitthar",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  phoveus: {
-    id: "phoveus", name: "Phoveus",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  roger: {
-    id: "roger", name: "Roger",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  ruby: {
-    id: "ruby", name: "Ruby",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  silvanna: {
-    id: "silvanna", name: "Silvanna",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  sun: {
-    id: "sun", name: "Sun",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] },
-    ],
-  },
-  terizla: {
-    id: "terizla", name: "Terizla",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  thamuz: {
-    id: "thamuz", name: "Thamuz",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  x_borg: {
-    id: "x_borg", name: "X.Borg",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Thrill", "Seasoned Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["tough_boots", "war_axe", "sky_piercer", "immortality", "brute_force_breastplate", "ice_queen_wand"] },
-    ],
-  },
-  yin: {
-    id: "yin", name: "Yin",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  zilong: {
-    id: "zilong", name: "Zilong",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["inspire"],
-        items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] },
-    ],
-  },
-  argus: {
-    id: "argus", name: "Argus",
-    variants: [
-      { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter",
-        talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-        spells: ["flicker"],
-        items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] },
-    ],
-  },
-  dyrroth: {
-    id: "dyrroth", name: "Dyrroth",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  aldous: {
-    id: "aldous", name: "Aldous",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  aulus: {
-    id: "aulus", name: "Aulus",
-    variants: [
-      { titleEn: "Jungle", titleKm: "ព្រៃ", emblem: "fighter",
-        talents: ["Firmness", "Seasoned Hunter", "War Cry"],
-        spells: ["retribution"],
-        items: ["rapid_boots", "war_axe", "brute_force_breastplate", "malefic_roar", "rose_gold_meteor", "queens_wings"] },
-    ],
-  },
-  barats: {
-    id: "barats", name: "Barats",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  cici: {
-    id: "cici", name: "Cici",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  fredrinn: {
-    id: "fredrinn", name: "Fredrinn",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  kalea: {
-    id: "kalea", name: "Kalea",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  lukas: {
-    id: "lukas", name: "Lukas",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Firmness", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "hunter_strike", "war_axe", "queens_wings", "malefic_roar", "rose_gold_meteor"] },
-    ],
-  },
-  sora: {
-    id: "sora", name: "Sora",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter",
-        talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-        spells: ["flicker"],
-        items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] },
-    ],
-  },
-  // ============ ADDITIONAL MAGES ============
-  aurora: {
-    id: "aurora", name: "Aurora",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  cecilion: {
-    id: "cecilion", name: "Cecilion",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Wilderness Blessing", "Temporal Reign"],
-        spells: ["flicker"],
-        items: ["demon_boots", "glowing_wand", "wishing_lantern", "enchanted_talisman", "blood_wings", "divine_glaive"] },
-    ],
-  },
-  change: {
-    id: "change", name: "Chang'e",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  cyclops: {
-    id: "cyclops", name: "Cyclops",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  eudora: {
-    id: "eudora", name: "Eudora",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  gord: {
-    id: "gord", name: "Gord",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  harith: {
-    id: "harith", name: "Harith",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "starlium_scythe", "feather_of_heaven", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  harley: {
-    id: "harley", name: "Harley",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Rupture", "Seasoned Hunter", "Lethal Ignition"],
-        spells: ["retribution"],
-        items: ["magic_boots", "genius_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  kadita: {
-    id: "kadita", name: "Kadita",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  kagura: {
-    id: "kagura", name: "Kagura",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Rupture", "Weapon Master", "Lethal Ignition"],
-        spells: ["flicker"],
-        items: ["arcane_boots", "genius_wand", "divine_glaive", "holy_crystal", "lightning_truncheon", "blood_wings"] },
-    ],
-  },
-  lunox: {
-    id: "lunox", name: "Lunox",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  luo_yi: {
-    id: "luo_yi", name: "Luo Yi",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  lylia: {
-    id: "lylia", name: "Lylia",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  nana: {
-    id: "nana", name: "Nana",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  novaria: {
-    id: "novaria", name: "Novaria",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Wilderness Blessing", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "holy_crystal", "winter_crown", "divine_glaive", "blood_wings", "immortality"] },
-    ],
-  },
-  odette: {
-    id: "odette", name: "Odette",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  pharsa: {
-    id: "pharsa", name: "Pharsa",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["arcane_boots", "clock_of_destiny", "lightning_truncheon", "genius_wand", "holy_crystal", "blood_wings"] },
-    ],
-  },
-  vale: {
-    id: "vale", name: "Vale",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  valentina: {
-    id: "valentina", name: "Valentina",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  valir: {
-    id: "valir", name: "Valir",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  vexana: {
-    id: "vexana", name: "Vexana",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  xavier: {
-    id: "xavier", name: "Xavier",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  yve: {
-    id: "yve", name: "Yve",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  zetian: {
-    id: "zetian", name: "Zetian",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "enchanted_talisman", "concentrated_energy", "wishing_lantern", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  zhask: {
-    id: "zhask", name: "Zhask",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  zhuxin: {
-    id: "zhuxin", name: "Zhuxin",
-    variants: [
-      { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage",
-        talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-        spells: ["flicker"],
-        items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] },
-    ],
-  },
-  // ============ ADDITIONAL SUPPORTS ============
-  angela: {
-    id: "angela", name: "Angela",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Agility", "Pull Yourself Together", "Focusing Mark"],
-        spells: ["flicker"],
-        items: ["magic_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] },
-    ],
-  },
-  chip: {
-    id: "chip", name: "Chip",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"],
-        spells: ["flicker"],
-        items: ["tough_boots", "dominance_ice", "antique_cuirass", "athenas_shield", "radiant_armor", "immortality"] },
-    ],
-  },
-  diggie: {
-    id: "diggie", name: "Diggie",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Agility", "Pull Yourself Together", "Focusing Mark"],
-        spells: ["revitalize"],
-        items: ["demon_boots", "flask_of_the_oasis", "fleeting_time", "immortality", "guardian_helmet", "chastise_pauldron"] },
-    ],
-  },
-  estes: {
-    id: "estes", name: "Estes",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Agility", "Pull Yourself Together", "Focusing Mark"],
-        spells: ["purify"],
-        items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] },
-    ],
-  },
-  floryn: {
-    id: "floryn", name: "Floryn",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"],
-        spells: ["purify"],
-        items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] },
-    ],
-  },
-  kaja: {
-    id: "kaja", name: "Kaja",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Agility", "Pull Yourself Together", "Focusing Mark"],
-        spells: ["flicker"],
-        items: ["rapid_boots", "thunder_belt", "fleeting_time", "dominance_ice", "immortality", "radiant_armor"] },
-    ],
-  },
-  mathilda: {
-    id: "mathilda", name: "Mathilda",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"],
-        spells: ["flicker"],
-        items: ["tough_boots", "dominance_ice", "antique_cuirass", "athenas_shield", "radiant_armor", "immortality"] },
-    ],
-  },
-  rafaela: {
-    id: "rafaela", name: "Rafaela",
-    variants: [
-      { titleEn: "Support", titleKm: "ជួយ", emblem: "support",
-        talents: ["Agility", "Pull Yourself Together", "Focusing Mark"],
-        spells: ["flicker"],
-        items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] },
-    ],
-  },
+  // ============ ASSASSIN ============
+  fanny: { id: "fanny", name: "Fanny", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution", "execute"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  gusion: { id: "gusion", name: "Gusion", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Rupture", "Bargain Hunter", "Impure Rage"], spells: ["retribution", "flicker"],
+      items: ["arcane_boots", "genius_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  ling: { id: "ling", name: "Ling", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Fatal", "Seasoned Hunter", "Killing Spree"], spells: ["retribution", "execute"],
+      items: ["magic_boots", "berserkers_fury", "haas_claws", "endless_battle", "malefic_roar", "blade_of_despair"] } ] },
+  lancelot: { id: "lancelot", name: "Lancelot", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Killing Spree"], spells: ["retribution", "flicker"],
+      items: ["tough_boots", "war_axe", "hunter_strike", "endless_battle", "blade_of_despair", "immortality"] } ] },
+  hayabusa: { id: "hayabusa", name: "Hayabusa", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Killing Spree"], spells: ["retribution", "flicker"],
+      items: ["magic_boots", "hunter_strike", "blade_of_the_heptaseas", "sky_piercer", "malefic_roar", "immortality"] } ] },
+  karina: { id: "karina", name: "Karina", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Killing Spree"], spells: ["retribution", "flicker"],
+      items: ["arcane_boots", "starlium_scythe", "genius_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  aamon: { id: "aamon", name: "Aamon", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Agility", "Seasoned Hunter", "War Cry"], spells: ["retribution"],
+      items: ["arcane_boots", "genius_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  hanzo: { id: "hanzo", name: "Hanzo", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  helcurt: { id: "helcurt", name: "Helcurt", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  joy: { id: "joy", name: "Joy", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Killing Spree"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  nolan: { id: "nolan", name: "Nolan", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Lethal Ignition"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "sky_piercer", "malefic_roar", "endless_battle", "immortality"] } ] },
+  saber: { id: "saber", name: "Saber", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  selena: { id: "selena", name: "Selena", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Rupture", "Weapon Master", "Lethal Ignition"], spells: ["flicker"],
+      items: ["arcane_boots", "starlium_scythe", "lightning_truncheon", "divine_glaive", "holy_crystal", "blood_wings"] } ] },
+  benedetta: { id: "benedetta", name: "Benedetta", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Festival of Blood", "Lethal Ignition"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "malefic_roar", "blade_of_despair", "sea_halberd"] } ] },
+  suyou: { id: "suyou", name: "Suyou", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Killing Spree"], spells: ["retribution"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  julian: { id: "julian", name: "Julian", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Rupture", "Seasoned Hunter", "Lethal Ignition"], spells: ["retribution"],
+      items: ["arcane_boots", "feather_of_heaven", "concentrated_energy", "genius_wand", "holy_crystal", "divine_glaive"] } ] },
+  natalia: { id: "natalia", name: "Natalia", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution", "execute"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  marcel: { id: "marcel", name: "Marcel", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution", "flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"] } ] },
+  // ============ MARKSMAN ============
+  brody: { id: "brody", name: "Brody", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Killing Spree"], spells: ["retribution", "execute"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "malefic_gun", "blade_of_despair", "hunter_strike", "immortality"] } ] },
+  beatrix: { id: "beatrix", name: "Beatrix", variants: [
+    { titleEn: "Critical", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "berserkers_fury", "haas_claws", "malefic_gun", "blade_of_despair", "immortality"] } ] },
+  melissa: { id: "melissa", name: "Melissa", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "corrosion_scythe", "demon_hunter_sword", "haas_claws", "windtalker", "sea_halberd"] } ] },
+  wanwan: { id: "wanwan", name: "Wanwan", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "corrosion_scythe", "windtalker", "haas_claws", "berserkers_fury", "malefic_roar"] } ] },
+  claude: { id: "claude", name: "Claude", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "demon_hunter_sword", "golden_staff", "corrosion_scythe", "windtalker", "sea_halberd"] } ] },
+  miya: { id: "miya", name: "Miya", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] } ] },
+  bruno: { id: "bruno", name: "Bruno", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["swift_boots", "endless_battle", "berserkers_fury", "blade_of_despair", "malefic_roar", "immortality"] } ] },
+  clint: { id: "clint", name: "Clint", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "assassin", talents: ["Rupture", "Master Assassin", "Lethal Ignition"], spells: ["flicker"],
+      items: ["rapid_boots", "endless_battle", "blade_of_despair", "berserkers_fury", "malefic_gun", "great_dragon_spear"] } ] },
+  granger: { id: "granger", name: "Granger", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "blade_of_despair"] } ] },
+  irithel: { id: "irithel", name: "Irithel", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["sprint"],
+      items: ["swift_boots", "berserkers_fury", "windtalker", "blade_of_despair", "malefic_roar", "rose_gold_meteor"] } ] },
+  karrie: { id: "karrie", name: "Karrie", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Swift", "Weapon Master", "Quantum Charge"], spells: ["inspire"],
+      items: ["corrosion_scythe", "golden_staff", "demon_hunter_sword", "malefic_gun", "rose_gold_meteor", "wind_of_nature"] } ] },
+  kimmy: { id: "kimmy", name: "Kimmy", variants: [
+    { titleEn: "Magic DPS", titleKm: "Magic DPS", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["arcane_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  layla: { id: "layla", name: "Layla", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "blade_of_despair"] } ] },
+  lesley: { id: "lesley", name: "Lesley", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["swift_boots", "berserkers_fury", "haas_claws", "malefic_roar", "blade_of_despair", "immortality"] } ] },
+  moskov: { id: "moskov", name: "Moskov", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Swift", "Weapons Master", "Quantum Charge"], spells: ["inspire"],
+      items: ["corrosion_scythe", "golden_staff", "demon_hunter_sword", "malefic_gun", "wind_of_nature", "immortality"] } ] },
+  natan: { id: "natan", name: "Natan", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["swift_boots", "berserkers_fury", "haas_claws", "windtalker", "malefic_roar", "blade_of_despair"] } ] },
+  popol_and_kupa: { id: "popol_and_kupa", name: "Popol and Kupa", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["retribution"],
+      items: ["swift_boots", "berserkers_fury", "windtalker", "blade_of_despair", "rose_gold_meteor", "malefic_roar"] } ] },
+  yi_sun_shin: { id: "yi_sun_shin", name: "Yi Sun-shin", variants: [
+    { titleEn: "Hybrid", titleKm: "Hybrid", emblem: "assassin", talents: ["Rupture", "Seasoned Hunter", "Killing Spree"], spells: ["retribution"],
+      items: ["tough_boots", "hunter_strike", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "immortality"] } ] },
+  ixia: { id: "ixia", name: "Ixia", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "corrosion_scythe", "windtalker", "haas_claws", "berserkers_fury", "malefic_roar"] } ] },
+  hanabi: { id: "hanabi", name: "Hanabi", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] } ] },
+  obsidia: { id: "obsidia", name: "Obsidia", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "marksman", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["inspire", "flicker"],
+      items: ["swift_boots", "corrosion_scythe", "windtalker", "haas_claws", "berserkers_fury", "malefic_roar"] } ] },
+  // ============ TANK ============
+  atlas: { id: "atlas", name: "Atlas", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "fleeting_time", "radiant_armor", "antique_cuirass", "immortality"] } ] },
+  tigreal: { id: "tigreal", name: "Tigreal", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  khufra: { id: "khufra", name: "Khufra", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "cursed_helmet", "dominance_ice", "athenas_shield", "antique_cuirass", "immortality"] } ] },
+  franco: { id: "franco", name: "Franco", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  gatotkaca: { id: "gatotkaca", name: "Gatotkaca", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Festival of Blood", "Concussive Blast"], spells: ["revitalize"],
+      items: ["tough_boots", "dominance_ice", "chastise_pauldron", "radiant_armor", "athenas_shield", "immortality"] } ] },
+  hylos: { id: "hylos", name: "Hylos", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["revitalize"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  minotaur: { id: "minotaur", name: "Minotaur", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  gloo: { id: "gloo", name: "Gloo", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  edith: { id: "edith", name: "Edith", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  akai: { id: "akai", name: "Akai", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "cursed_helmet", "dominance_ice", "athenas_shield", "antique_cuirass", "immortality"] } ] },
+  baxia: { id: "baxia", name: "Baxia", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Seasoned Hunter", "Concussive Blast"], spells: ["retribution"],
+      items: ["tough_boots", "cursed_helmet", "chastise_pauldron", "radiant_armor", "antique_cuirass", "immortality"] } ] },
+  belerick: { id: "belerick", name: "Belerick", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Brave Smite"], spells: ["vengeance"],
+      items: ["rapid_boots", "dominance_ice", "antique_cuirass", "guardian_helmet", "blade_armor", "radiant_armor"] } ] },
+  grock: { id: "grock", name: "Grock", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["rapid_boots", "thunder_belt", "dominance_ice", "blade_armor", "guardian_helmet", "antique_cuirass"] } ] },
+  hilda: { id: "hilda", name: "Hilda", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  johnson: { id: "johnson", name: "Johnson", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  lolita: { id: "lolita", name: "Lolita", variants: [
+    { titleEn: "Roam", titleKm: "រុករក", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"] } ] },
+  uranus: { id: "uranus", name: "Uranus", variants: [
+    { titleEn: "EXP", titleKm: "EXP", emblem: "tank", talents: ["Vitality", "Tenacity", "Concussive Blast"], spells: ["flicker"],
+      items: ["tough_boots", "oracle", "blade_armor", "thunder_belt", "dominance_ice", "antique_cuirass"] } ] },
+  // ============ FIGHTER ============
+  chou: { id: "chou", name: "Chou", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  paquito: { id: "paquito", name: "Paquito", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Lethal Ignition"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  yu_zhong: { id: "yu_zhong", name: "Yu Zhong", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  arlott: { id: "arlott", name: "Arlott", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Lethal Ignition"], spells: ["flicker"],
+      items: ["tough_boots", "sea_halberd", "sky_piercer", "malefic_roar", "blade_of_the_heptaseas", "immortality"] } ] },
+  alpha: { id: "alpha", name: "Alpha", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  alucard: { id: "alucard", name: "Alucard", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  badang: { id: "badang", name: "Badang", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  balmond: { id: "balmond", name: "Balmond", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  freya: { id: "freya", name: "Freya", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] } ] },
+  guinevere: { id: "guinevere", name: "Guinevere", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Rupture", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["arcane_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  jawhead: { id: "jawhead", name: "Jawhead", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  khaleed: { id: "khaleed", name: "Khaleed", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "bloodlust_axe", "blade_of_the_heptaseas", "hunter_strike", "queens_wings", "immortality"] } ] },
+  lapu_lapu: { id: "lapu_lapu", name: "Lapu-Lapu", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  leomord: { id: "leomord", name: "Leomord", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  martis: { id: "martis", name: "Martis", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  masha: { id: "masha", name: "Masha", variants: [
+    { titleEn: "Attack Speed", titleKm: "ល្បឿនវាយ", emblem: "fighter", talents: ["Fatal", "Weapon Master", "Quantum Charge"], spells: ["inspire"],
+      items: ["rapid_boots", "sea_halberd", "haas_claws", "windtalker", "berserkers_fury", "malefic_roar"] } ] },
+  minsitthar: { id: "minsitthar", name: "Minsitthar", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  phoveus: { id: "phoveus", name: "Phoveus", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  roger: { id: "roger", name: "Roger", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  ruby: { id: "ruby", name: "Ruby", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  silvanna: { id: "silvanna", name: "Silvanna", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  sun: { id: "sun", name: "Sun", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] } ] },
+  terizla: { id: "terizla", name: "Terizla", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  thamuz: { id: "thamuz", name: "Thamuz", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  x_borg: { id: "x_borg", name: "X.Borg", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Thrill", "Seasoned Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["tough_boots", "war_axe", "sky_piercer", "immortality", "brute_force_breastplate", "ice_queen_wand"] } ] },
+  yin: { id: "yin", name: "Yin", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  zilong: { id: "zilong", name: "Zilong", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["inspire"],
+      items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] } ] },
+  argus: { id: "argus", name: "Argus", variants: [
+    { titleEn: "Crit", titleKm: "Crit ខ្លាំង", emblem: "fighter", talents: ["Fatal", "Weapon Master", "Weakness Finder"], spells: ["flicker"],
+      items: ["tough_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"] } ] },
+  dyrroth: { id: "dyrroth", name: "Dyrroth", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  aldous: { id: "aldous", name: "Aldous", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  aulus: { id: "aulus", name: "Aulus", variants: [
+    { titleEn: "Jungle", titleKm: "ព្រៃ", emblem: "fighter", talents: ["Firmness", "Seasoned Hunter", "War Cry"], spells: ["retribution"],
+      items: ["rapid_boots", "war_axe", "brute_force_breastplate", "malefic_roar", "rose_gold_meteor", "queens_wings"] } ] },
+  barats: { id: "barats", name: "Barats", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  cici: { id: "cici", name: "Cici", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  fredrinn: { id: "fredrinn", name: "Fredrinn", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  kalea: { id: "kalea", name: "Kalea", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  lukas: { id: "lukas", name: "Lukas", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Firmness", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "hunter_strike", "war_axe", "queens_wings", "malefic_roar", "rose_gold_meteor"] } ] },
+  sora: { id: "sora", name: "Sora", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  bane: { id: "bane", name: "Bane", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "fighter", talents: ["Rupture", "Festival of Blood", "Brave Smite"], spells: ["flicker"],
+      items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"] } ] },
+  // ============ MAGE ============
+  valir: { id: "valir", name: "Valir", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  xavier: { id: "xavier", name: "Xavier", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  kagura: { id: "kagura", name: "Kagura", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Rupture", "Weapon Master", "Lethal Ignition"], spells: ["flicker"],
+      items: ["arcane_boots", "genius_wand", "divine_glaive", "holy_crystal", "lightning_truncheon", "blood_wings"] } ] },
+  lunox: { id: "lunox", name: "Lunox", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  valentina: { id: "valentina", name: "Valentina", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  eudora: { id: "eudora", name: "Eudora", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  aurora: { id: "aurora", name: "Aurora", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  cecilion: { id: "cecilion", name: "Cecilion", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Wilderness Blessing", "Temporal Reign"], spells: ["flicker"],
+      items: ["demon_boots", "glowing_wand", "wishing_lantern", "enchanted_talisman", "blood_wings", "divine_glaive"] } ] },
+  change: { id: "change", name: "Chang'e", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  cyclops: { id: "cyclops", name: "Cyclops", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  gord: { id: "gord", name: "Gord", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  harith: { id: "harith", name: "Harith", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "starlium_scythe", "feather_of_heaven", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  harley: { id: "harley", name: "Harley", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Rupture", "Seasoned Hunter", "Lethal Ignition"], spells: ["retribution"],
+      items: ["magic_boots", "genius_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  kadita: { id: "kadita", name: "Kadita", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "holy_crystal", "divine_glaive", "blood_wings", "immortality"] } ] },
+  luo_yi: { id: "luo_yi", name: "Luo Yi", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  lylia: { id: "lylia", name: "Lylia", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  nana: { id: "nana", name: "Nana", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  novaria: { id: "novaria", name: "Novaria", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Wilderness Blessing", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "holy_crystal", "winter_crown", "divine_glaive", "blood_wings", "immortality"] } ] },
+  odette: { id: "odette", name: "Odette", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  pharsa: { id: "pharsa", name: "Pharsa", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["arcane_boots", "clock_of_destiny", "lightning_truncheon", "genius_wand", "holy_crystal", "blood_wings"] } ] },
+  vale: { id: "vale", name: "Vale", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  vexana: { id: "vexana", name: "Vexana", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  yve: { id: "yve", name: "Yve", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  zetian: { id: "zetian", name: "Zetian", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "enchanted_talisman", "concentrated_energy", "wishing_lantern", "divine_glaive", "blood_wings"] } ] },
+  zhask: { id: "zhask", name: "Zhask", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  zhuxin: { id: "zhuxin", name: "Zhuxin", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  alice: { id: "alice", name: "Alice", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  faramis: { id: "faramis", name: "Faramis", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  esmeralda: { id: "esmeralda", name: "Esmeralda", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  hirara: { id: "hirara", name: "Hirara", variants: [
+    { titleEn: "Burst", titleKm: "Burst លឿន", emblem: "mage", talents: ["Inspire", "Bargain Hunter", "Impure Rage"], spells: ["flicker", "flameshot"],
+      items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"] } ] },
+  // ============ SUPPORT ============
+  angela: { id: "angela", name: "Angela", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Agility", "Pull Yourself Together", "Focusing Mark"], spells: ["flicker"],
+      items: ["magic_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] } ] },
+  estes: { id: "estes", name: "Estes", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Agility", "Pull Yourself Together", "Focusing Mark"], spells: ["purify"],
+      items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] } ] },
+  mathilda: { id: "mathilda", name: "Mathilda", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "antique_cuirass", "athenas_shield", "radiant_armor", "immortality"] } ] },
+  floryn: { id: "floryn", name: "Floryn", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"], spells: ["purify"],
+      items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] } ] },
+  rafaela: { id: "rafaela", name: "Rafaela", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Agility", "Pull Yourself Together", "Focusing Mark"], spells: ["purify"],
+      items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"] } ] },
+  chip: { id: "chip", name: "Chip", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "antique_cuirass", "athenas_shield", "radiant_armor", "immortality"] } ] },
+  diggie: { id: "diggie", name: "Diggie", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Agility", "Pull Yourself Together", "Focusing Mark"], spells: ["revitalize"],
+      items: ["demon_boots", "flask_of_the_oasis", "fleeting_time", "immortality", "guardian_helmet", "chastise_pauldron"] } ] },
+  kaja: { id: "kaja", name: "Kaja", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Agility", "Wilderness Blessing", "Quantum Charge"], spells: ["flicker"],
+      items: ["rapid_boots", "thunder_belt", "fleeting_time", "dominance_ice", "immortality", "radiant_armor"] } ] },
+  carmilla: { id: "carmilla", name: "Carmilla", variants: [
+    { titleEn: "Support", titleKm: "ជួយ", emblem: "support", talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"], spells: ["flicker"],
+      items: ["tough_boots", "dominance_ice", "antique_cuirass", "athenas_shield", "radiant_armor", "immortality"] } ] },
 };
-// ============ AUTO-GENERATE BUILDS BY ROLE ============
-type RoleBuildTemplate = {
-  emblem: string;
-  talents: string[];
-  spells: string[];
-  items: string[];
-  titleEn: string;
-  titleKm: string;
-};
-const ROLE_TEMPLATES: Record<string, RoleBuildTemplate> = {
-  assassin: {
-    emblem: "assassin",
-    talents: ["Rupture", "Master Assassin", "Killing Spree"],
-    spells: ["retribution", "execute"],
-    items: ["tough_boots", "blade_of_the_heptaseas", "malefic_roar", "endless_battle", "queens_wings", "immortality"],
-    titleEn: "Burst", titleKm: "Burst លឿន",
-  },
-  marksman: {
-    emblem: "marksman",
-    talents: ["Fatal", "Weapon Master", "Weakness Finder"],
-    spells: ["inspire", "flicker"],
-    items: ["swift_boots", "haas_claws", "berserkers_fury", "windtalker", "malefic_roar", "immortality"],
-    titleEn: "Crit", titleKm: "Crit ខ្លាំង",
-  },
-  tank: {
-    emblem: "tank",
-    talents: ["Vitality", "Tenacity", "Concussive Blast"],
-    spells: ["flicker"],
-    items: ["tough_boots", "dominance_ice", "athenas_shield", "antique_cuirass", "radiant_armor", "immortality"],
-    titleEn: "Roam", titleKm: "រុករក",
-  },
-  fighter: {
-    emblem: "fighter",
-    talents: ["Rupture", "Festival of Blood", "Brave Smite"],
-    spells: ["flicker"],
-    items: ["tough_boots", "blade_of_the_heptaseas", "hunter_strike", "war_axe", "queens_wings", "immortality"],
-    titleEn: "Burst", titleKm: "Burst លឿន",
-  },
-  mage: {
-    emblem: "mage",
-    talents: ["Inspire", "Bargain Hunter", "Impure Rage"],
-    spells: ["flicker", "flameshot"],
-    items: ["magic_boots", "glowing_wand", "ice_queen_wand", "holy_crystal", "divine_glaive", "blood_wings"],
-    titleEn: "Burst", titleKm: "Burst លឿន",
-  },
-  support: {
-    emblem: "support",
-    talents: ["Pull Yourself Together", "Bargain Hunter", "Focusing Mark"],
-    spells: ["flicker"],
-    items: ["demon_boots", "favor", "flask_of_the_oasis", "enchanted_talisman", "fleeting_time", "holy_crystal"],
-    titleEn: "Support", titleKm: "ជួយ",
-  },
-};
-export function getBuild(heroId: string, heroName: string, role: string): HeroBuild {
-  if (HERO_BUILDS[heroId]) return HERO_BUILDS[heroId];
-  const tpl = ROLE_TEMPLATES[role] || ROLE_TEMPLATES.fighter;
-  return {
-    id: heroId,
-    name: heroName,
-    variants: [
-      {
-        titleEn: tpl.titleEn,
-        titleKm: tpl.titleKm,
-        emblem: tpl.emblem,
-        talents: tpl.talents,
-        spells: tpl.spells,
-        items: tpl.items,
-      },
-    ],
-  };
-}

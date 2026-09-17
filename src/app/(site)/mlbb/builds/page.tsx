@@ -5,7 +5,7 @@ import { Search, ChevronLeft, Info, X } from "lucide-react";
 import { MoodSetter } from "@/components/MoodSetter";
 import { useLang } from "@/lib/i18n";
 import { UNIQUE_HEROES, ROLE_LABELS } from "@/lib/mlbbTierData";
-import { HERO_BUILDS, ITEM_DETAILS, getBuild } from "@/lib/heroBuilds";
+import { HERO_BUILDS, ITEM_DETAILS } from "@/lib/heroBuilds";
 
 const TALENT_SLUG_OVERRIDES: Record<string, string> = {
   "Weapon Master": "weapons-master",
@@ -75,7 +75,7 @@ export default function BuildsPage() {
           {list.map((h) => {
             const roleInfo = ROLE_LABELS[h.role];
             const color = roleInfo.color;
-            const heroBuild = getBuild(h.id, h.name, h.role);
+            const heroBuild = HERO_BUILDS[h.id];
             if (!heroBuild) return null;
             const variants = heroBuild.variants;
             const tabIdx = tabs[h.id] ?? 0;
