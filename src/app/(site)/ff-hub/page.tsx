@@ -165,7 +165,7 @@ function NewsTicker() {
           ផ្សាយបន្តផ្ទាល់
         </span>
         <div className="relative flex-1 overflow-hidden">
-          <div className="flex gap-12 whitespace-nowrap" style={{ animation: "scroll-ticker 30s linear infinite" }}>
+          <div className="flex gap-12 whitespace-nowrap animate-ticker">
             {news.concat(news).map((item, i) => (
               <span key={i} className="text-xs font-bold text-white/80">
                 {item}
@@ -174,12 +174,6 @@ function NewsTicker() {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes scroll-ticker {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
     </div>
   );
 }
@@ -454,25 +448,25 @@ export default function FFHubPage() {
                 </div>
               </FadeIn>
 
+              {/* HERO IMAGE — BIGGER + FLOAT ANIMATION (CSS class, no <style jsx>) */}
               <FadeIn delay={200}>
-                <div className="relative hidden lg:block">
-                  <div className="relative aspect-square">
+                <div className="relative flex justify-center lg:justify-end">
+                  <div className="relative w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] lg:w-[560px] lg:h-[560px]">
+                    {/* Multi-layer Glow */}
+                    <div className="absolute inset-0 rounded-full bg-cyan-500/30 blur-[100px]" />
+                    <div className="absolute inset-8 rounded-full bg-purple-500/25 blur-[80px]" />
+                    <div className="absolute inset-16 rounded-full bg-cyan-400/20 blur-[60px]" />
+                    <div className="absolute inset-24 rounded-full bg-pink-500/15 blur-[40px]" />
+
+                    {/* Image with Float Animation */}
                     <img
-                      src="/images/ff/heroes/alok.png"
+                      src="/images/ff/hero-featured-ff.png"
                       alt="FF Character"
-                      className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_0_60px_rgba(34,211,238,0.6)]"
+                      className="relative h-full w-full object-contain drop-shadow-[0_0_80px_rgba(34,211,238,0.8)] animate-hero-float"
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = "none";
                       }}
                     />
-                  </div>
-                  <div className="absolute -left-4 top-1/4 rounded-xl border border-cyan-500/30 bg-black/60 px-3 py-2 backdrop-blur-md">
-                    <div className="text-[10px] font-bold uppercase text-cyan-400">កំពូល Meta</div>
-                    <div className="text-sm font-black text-white">Alok</div>
-                  </div>
-                  <div className="absolute -right-4 bottom-1/4 rounded-xl border border-purple-500/30 bg-black/60 px-3 py-2 backdrop-blur-md">
-                    <div className="text-[10px] font-bold uppercase text-purple-400">Tier</div>
-                    <div className="text-sm font-black text-white">S+</div>
                   </div>
                 </div>
               </FadeIn>
