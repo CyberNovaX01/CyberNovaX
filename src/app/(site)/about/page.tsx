@@ -11,8 +11,8 @@ export default function AboutPage() {
         icon={Users}
         kickerKm="អំពីយើង"
         kickerEn="ABOUT US"
-        titleKm="អំពី Gaming Guide"
-        titleEn="About Gaming Guide"
+        titleKm="អំពី CyberNovaX"
+        titleEn="About CyberNovaX"
         subtitleKm="យើងជាក្រុមអ្នកលេងហ្គេមខ្មែរ ដែលចង់ជួយអ្នកលេងផ្សេងទៀតឱ្យពូកែ"
         subtitleEn="We are a Cambodian gaming community helping players level up"
         color="#22d3ee"
@@ -22,11 +22,11 @@ export default function AboutPage() {
             headingKm: "យើងជានរណា?",
             headingEn: "Who We Are",
             bodyKm: [
-              "Gaming Guide គឺជាវេទិកាអប់រំសម្រាប់អ្នកលេងហ្គេមនៅកម្ពុជា និងអាស៊ីអាគ្នេយ៍។ យើងផ្តល់ជូនGuideគុណភាពខ្ពស់សម្រាប់ Free Fire និង Mobile Legends។",
+              "CyberNovaX គឺជាវេទិកាអប់រំសម្រាប់អ្នកលេងហ្គេមនៅកម្ពុជា និងអាស៊ីអាគ្នេយ៍។ យើងផ្តល់ជូនGuideគុណភាពខ្ពស់សម្រាប់ Free Fire និង Mobile Legends។",
               "គោលដៅរបស់យើងគឺធ្វើឱ្យការរៀនហ្គេមកាន់តែងាយស្រួល និងរីករាយសម្រាប់អ្នកលេងគ្រប់កម្រិត — ចាប់ពីអ្នកចាប់ផ្តើមថ្មី ដល់អ្នកលេងកម្រិតខ្ពស់។",
             ],
             bodyEn: [
-              "Gaming Guide is an educational platform for gamers in Cambodia and Southeast Asia. We provide high-quality guides for Free Fire and Mobile Legends.",
+              "CyberNovaX is an educational platform for gamers in Cambodia and Southeast Asia. We provide high-quality guides for Free Fire and Mobile Legends.",
               "Our goal is to make learning games easier and more enjoyable for players of all levels — from beginners to advanced players.",
             ],
           },

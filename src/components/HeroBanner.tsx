@@ -69,7 +69,7 @@ export function HeroBanner() {
           <div>
             <div className="slide-up inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-gold backdrop-blur">
               <Sparkles size={12} />
-              {km ? "Guideលេងហ្គេម" : "GAMING GUIDES"}
+              {km ? "Guideលេងហ្គេម" : "CYBERNOVAX"}
             </div>
 
             <h1 className="slide-up mt-5 text-4xl font-black leading-[0.98] tracking-tight sm:text-5xl lg:text-6xl">

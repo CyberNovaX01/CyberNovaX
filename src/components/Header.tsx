@@ -43,7 +43,6 @@ export function Header({
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   void games;
-  void logoUrl;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -86,13 +85,17 @@ export function Header({
         >
           <Link href="/" className="group flex shrink-0 items-center gap-2 sm:gap-2.5">
             <span
-              className="grid h-9 w-9 place-items-center rounded-xl text-black shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+              className="grid h-9 w-9 place-items-center overflow-hidden rounded-xl text-black shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
               style={{
-                background: "linear-gradient(135deg, #f5c542 0%, #ff8c00 100%)",
+                background: logoUrl ? "transparent" : "linear-gradient(135deg, #f5c542 0%, #ff8c00 100%)",
                 animation: "logoPulse 3s ease-in-out infinite",
               }}
             >
-              <Gamepad2 size={17} strokeWidth={2.4} />
+              {logoUrl ? (
+                <img src={logoUrl} alt={siteName} className="h-full w-full object-cover" />
+              ) : (
+                <Gamepad2 size={17} strokeWidth={2.4} />
+              )}
             </span>
             <div
               className={

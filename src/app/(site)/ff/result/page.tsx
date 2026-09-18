@@ -26,7 +26,7 @@ export default function FFResultPage() {
       "4x Scope: " + SENSITIVITY.x4Scope + "\n" +
       "Sniper: " + SENSITIVITY.sniper + "\n" +
       "DPI: " + SENSITIVITY.dpi + "\n" +
-      "— Gaming Guide";
+      "— CyberNovaX";
     try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch {}
   };
   return (

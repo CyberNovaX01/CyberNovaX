@@ -22,7 +22,7 @@ export function Footer() {
                 <Gamepad2 size={17} strokeWidth={2.4} />
               </span>
               <span className="text-base font-black tracking-tight">
-                Gaming Guide
+                CyberNovaX
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
@@ -82,7 +82,7 @@ export function Footer() {
             <AlertCircle size={16} className="mt-0.5 shrink-0 text-yellow-500" />
             <div className="space-y-2 text-xs leading-relaxed text-muted">
               <p>
-                <strong className="text-fg">Disclaimer:</strong> Gaming Guide is an independent fan site created for informational and educational purposes only. We are <strong>not affiliated with, endorsed by, or sponsored by</strong> Garena Free Fire or Moonton Mobile Legends: Bang Bang.
+                <strong className="text-fg">Disclaimer:</strong> CyberNovaX is an independent fan site created for informational and educational purposes only. We are <strong>not affiliated with, endorsed by, or sponsored by</strong> Garena Free Fire or Moonton Mobile Legends: Bang Bang.
               </p>
               <p>
                 <strong className="text-fg">Credits:</strong> All game-related images, characters, weapons, and trademarks are the property of their respective owners — <strong>© Garena Free Fire</strong> and <strong>© Moonton Mobile Legends: Bang Bang</strong>. Images are used under fair use for informational purposes.
@@ -95,7 +95,7 @@ export function Footer() {
         </div>
 
         <div className="mt-6 flex flex-col items-center gap-3 border-t border-line pt-6 text-xs text-faint sm:flex-row sm:justify-between">
-          <p>© {year} Gaming Guide · {t("footer.copyright")}</p>
+          <p>© {year} CyberNovaX · {t("footer.copyright")}</p>
           <p className="flex items-center gap-1.5">
             {t("footer.made")} <span>🇰🇭</span>
           </p>

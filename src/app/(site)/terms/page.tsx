@@ -22,10 +22,10 @@ export default function TermsPage() {
             headingKm: "1. ការទទួលយកលក្ខខណ្ឌ",
             headingEn: "1. Acceptance of Terms",
             bodyKm: [
-              "តាមរយៈការចូលប្រើគេហទំព័រ Gaming Guide អ្នកយល់ព្រមទទួលយកលក្ខខណ្ឌទាំងនេះ។ បើអ្នកមិនយល់ព្រម សូមកុំប្រើគេហទំព័រ។",
+              "តាមរយៈការចូលប្រើគេហទំព័រ CyberNovaX អ្នកយល់ព្រមទទួលយកលក្ខខណ្ឌទាំងនេះ។ បើអ្នកមិនយល់ព្រម សូមកុំប្រើគេហទំព័រ។",
             ],
             bodyEn: [
-              "By accessing Gaming Guide, you agree to accept these terms. If you do not agree, please do not use the site.",
+              "By accessing CyberNovaX, you agree to accept these terms. If you do not agree, please do not use the site.",
             ],
           },
           {
@@ -50,11 +50,11 @@ export default function TermsPage() {
             headingKm: "3. កម្មសិទ្ធិបញ្ញា",
             headingEn: "3. Intellectual Property",
             bodyKm: [
-              "ខ្លឹមសារទាំងអស់ (text, graphics, layout) ជាកម្មសិទ្ធិរបស់ Gaming Guide ឬដៃគូអាជីវកម្មរបស់យើង។",
+              "ខ្លឹមសារទាំងអស់ (text, graphics, layout) ជាកម្មសិទ្ធិរបស់ CyberNovaX ឬដៃគូអាជីវកម្មរបស់យើង។",
               "ឈ្មោះហ្គេម និង logos (Free Fire, Mobile Legends) ជាកម្មសិទ្ធិរបស់ Garena និង Moonton រៀងៗខ្លួន។ យើងមិនមានទំនាក់ទំនងផ្លូវការជាមួយក្រុមហ៊ុនទាំងនោះទេ។",
             ],
             bodyEn: [
-              "All content (text, graphics, layout) is property of Gaming Guide or our partners.",
+              "All content (text, graphics, layout) is property of CyberNovaX or our partners.",
               "Game names and logos (Free Fire, Mobile Legends) are property of Garena and Moonton respectively. We are not officially affiliated with them.",
             ],
           },

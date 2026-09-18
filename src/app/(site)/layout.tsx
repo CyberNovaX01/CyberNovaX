@@ -12,7 +12,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="relative min-h-dvh">
       <ThemeBackground />
-      <Header games={MOCK_GAMES} siteName="Gaming Guide" logoUrl={null} />
+      <Header games={MOCK_GAMES} siteName="CyberNovaX" logoUrl="/images/logo.png" />
       <main className="relative z-10 pb-20 lg:pb-0">{children}</main>
       <Footer />
       <BottomNav />

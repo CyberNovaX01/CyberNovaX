@@ -80,7 +80,7 @@ const en: Dict = {
   "theme.dark": "Dark", "theme.light": "Light",
   "header.lastUpdate": "Last updated",
   "header.search": "Search…",
-  "hero.kicker": "GAMING GUIDES",
+  "hero.kicker": "CYBERNOVAX",
   "hero.line1": "Find the guide",
   "hero.line2": "made for you",
   "hero.sub": "Clear guides for Free Fire and Mobile Legends — by device, by hero, by role.",

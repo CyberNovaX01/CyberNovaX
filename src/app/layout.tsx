@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Kantumruy_Pro, Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
@@ -9,7 +9,7 @@ const sora = Sora({ subsets: ["latin"], variable: "--font-sora", display: "swap"
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: { default: "Gaming Guide — ការណែនាំហ្គេម", template: "%s | Gaming Guide" },
+  title: { default: "CyberNovaX — ការណែនាំហ្គេម", template: "%s | CyberNovaX" },
   description: "Guides សម្រាប់ Free Fire និង Mobile Legends។",
 };
 export const viewport: Viewport = { themeColor: "#0a0d14", width: "device-width", initialScale: 1 };

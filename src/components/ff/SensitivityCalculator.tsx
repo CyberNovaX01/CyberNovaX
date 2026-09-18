@@ -1,8 +1,9 @@
 "use client";
 import { useMemo, useState } from "react";
+import { PhoneCheckTab } from "./PhoneCheckTab";
 import {
   Search, Zap, Users, BookOpen, Copy, Check, RefreshCw,
-  ChevronDown, Target, Sparkles, Info,
+  ChevronDown, Target, Sparkles, Info, Smartphone,
 } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { FadeIn } from "@/components/FadeIn";
@@ -15,7 +16,7 @@ import {
   TIER_LABELS, type Playstyle, type SensitivityResult,
 } from "@/lib/ffSensitivity";
 
-type Tab = "generator" | "community" | "guide";
+type Tab = "generator" | "community" | "guide" | "fps";
 
 const PLAYSTYLES: Playstyle[] = ["headshot", "onetap", "clash", "br", "balanced", "sniper"];
 
@@ -102,6 +103,7 @@ export function SensitivityCalculator() {
               { id: "generator", icon: Zap,      en: "Generator", km: "បង្កើត" },
               { id: "community", icon: Users,    en: "Community", km: "សហគមន៍" },
               { id: "guide",     icon: BookOpen, en: "Guide",     km: "Guide" },
+              { id: "fps",       icon: Smartphone, en: "FPS Check", km: "FPS Check" },
             ] as const
           ).map((t) => {
             const Icon = t.icon;
@@ -375,6 +377,12 @@ export function SensitivityCalculator() {
         </FadeIn>
       )}
 
+      {/* ═══════════════ FPS CHECK TAB ═══════════════ */}
+      {tab === "fps" && (
+        <div className="mt-8">
+          <PhoneCheckTab />
+        </div>
+      )}
       {/* ═══════════════ GUIDE TAB ═══════════════ */}
       {tab === "guide" && (
         <FadeIn>
