@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Gamepad2, Globe, Send, Play, Mail, AlertCircle } from "lucide-react";
+import { Gamepad2, Globe, Send, Play, Mail } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
 export function Footer() {
@@ -76,25 +76,7 @@ export function Footer() {
           />
         </div>
 
-        {/* DISCLAIMER */}
-        <div className="mt-12 rounded-xl border border-line bg-surface/40 p-4">
-          <div className="flex items-start gap-3">
-            <AlertCircle size={16} className="mt-0.5 shrink-0 text-yellow-500" />
-            <div className="space-y-2 text-xs leading-relaxed text-muted">
-              <p>
-                <strong className="text-fg">Disclaimer:</strong> Gaming Guide is an independent fan site created for informational and educational purposes only. We are <strong>not affiliated with, endorsed by, or sponsored by</strong> Garena Free Fire or Moonton Mobile Legends: Bang Bang.
-              </p>
-              <p>
-                <strong className="text-fg">Credits:</strong> All game-related images, characters, weapons, and trademarks are the property of their respective owners — <strong>© Garena Free Fire</strong> and <strong>© Moonton Mobile Legends: Bang Bang</strong>. Images are used under fair use for informational purposes.
-              </p>
-              <p>
-                If you are a copyright owner and believe content on this site infringes your rights, please <Link href="/contact" className="text-gold hover:underline">contact us</Link> and we will respond promptly.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6 flex flex-col items-center gap-3 border-t border-line pt-6 text-xs text-faint sm:flex-row sm:justify-between">
+        <div className="mt-12 flex flex-col items-center gap-3 border-t border-line pt-6 text-xs text-faint sm:flex-row sm:justify-between">
           <p>© {year} Gaming Guide · {t("footer.copyright")}</p>
           <p className="flex items-center gap-1.5">
             {t("footer.made")} <span>🇰🇭</span>
