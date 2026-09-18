@@ -72,7 +72,7 @@ export default function RankMythicPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
               {km
-                ? "មគ្គុទ្ទេសក៍ពេញលេញដើម្បីឡើងពី Mythic ដល់ 100 Star — ជាមួយ hero meta 2026, យុទ្ធសាស្ត្រ, និងច្បាប់សំខាន់ៗ។"
+                ? "Guideពេញលេញដើម្បីឡើងពី Mythic ដល់ 100 Star — ជាមួយ hero meta 2026, យុទ្ធសាស្ត្រ, និងច្បាប់សំខាន់ៗ។"
                 : "Complete guide to climb from Mythic to 100 Stars — with 2026 meta heroes, strategies, and key rules."}
             </p>
 

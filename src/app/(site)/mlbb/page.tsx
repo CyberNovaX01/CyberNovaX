@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import {
   Trophy, Users, BarChart3, Swords, Shield, Sparkles, ArrowRight, ChevronLeft,
@@ -146,7 +146,7 @@ export default function MLBBHubPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
               {km
-                ? "មគ្គុទ្ទេសក៍ពេញលេញសម្រាប់អ្នកលេង Mobile Legends — ជ្រើសរើសប្រភេទដែលអ្នកចង់ស្វែងយល់។"
+                ? "Guideពេញលេញសម្រាប់អ្នកលេង Mobile Legends — ជ្រើសរើសប្រភេទដែលអ្នកចង់ស្វែងយល់។"
                 : "Complete guides for Mobile Legends players — choose the category you want to explore."}
             </p>
           </FadeIn>
@@ -237,7 +237,7 @@ export default function MLBBHubPage() {
                       className="mt-auto flex items-center gap-1.5 pt-5 text-xs font-bold transition-all group-hover:gap-3"
                       style={{ color: c.color }}
                     >
-                      {km ? "មើលមគ្គុទ្ទេសក៍" : "View guide"}
+                      {km ? "មើលGuide" : "View guide"}
                       <ArrowRight size={13} />
                     </div>
                   </div>

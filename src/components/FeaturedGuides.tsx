@@ -78,7 +78,7 @@ const GUIDES: Guide[] = [
     emoji: "🦸",
     titleKm: "FF Characters",
     titleEn: "FF Characters",
-    descKm: "មគ្គុទ្ទេសក៍តួអង្គ FF ទាំងអស់",
+    descKm: "Guideតួអង្គ FF ទាំងអស់",
     descEn: "Full guide to FF characters",
     href: "/ff/characters",
     color: "#22d3ee",

@@ -69,7 +69,7 @@ export function HeroBanner() {
           <div>
             <div className="slide-up inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-gold backdrop-blur">
               <Sparkles size={12} />
-              {km ? "មគ្គុទ្ទេសក៍លេងហ្គេម" : "GAMING GUIDES"}
+              {km ? "Guideលេងហ្គេម" : "GAMING GUIDES"}
             </div>
 
             <h1 className="slide-up mt-5 text-4xl font-black leading-[0.98] tracking-tight sm:text-5xl lg:text-6xl">
@@ -89,7 +89,7 @@ export function HeroBanner() {
 
             <p className="slide-up mt-4 max-w-lg text-sm leading-relaxed text-muted sm:text-base">
               {km
-                ? "មគ្គុទ្ទេសក៍ពេញលេញ និងឧបករណ៍គណនា sensitivity សម្រាប់ Free Fire + Mobile Legends។ ជ្រើសហ្គេមដែលអ្នកលេងដើម្បីចាប់ផ្តើម។"
+                ? "Guideពេញលេញ និងឧបករណ៍គណនា sensitivity សម្រាប់ Free Fire + Mobile Legends។ ជ្រើសហ្គេមដែលអ្នកលេងដើម្បីចាប់ផ្តើម។"
                 : "Complete guides and sensitivity tools for Free Fire + Mobile Legends. Choose your game to get started."}
             </p>
 

@@ -56,7 +56,7 @@ export default function ToolsPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
               {km
-                ? getToolCount() + " ឧបករណ៍ និងមគ្គុទ្ទេសក៍ជួយអ្នកឡើង rank លឿន — ជ្រើសរើសដែលអ្នកចង់ប្រើ។"
+                ? getToolCount() + " ឧបករណ៍ និងGuideជួយអ្នកឡើង rank លឿន — ជ្រើសរើសដែលអ្នកចង់ប្រើ។"
                 : getToolCount() + " tools and guides to help you rank up faster — pick what you need."}
             </p>
           </FadeIn>

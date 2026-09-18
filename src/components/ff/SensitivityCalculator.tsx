@@ -101,7 +101,7 @@ export function SensitivityCalculator() {
             [
               { id: "generator", icon: Zap,      en: "Generator", km: "បង្កើត" },
               { id: "community", icon: Users,    en: "Community", km: "សហគមន៍" },
-              { id: "guide",     icon: BookOpen, en: "Guide",     km: "មគ្គុទ្ទេសក៍" },
+              { id: "guide",     icon: BookOpen, en: "Guide",     km: "Guide" },
             ] as const
           ).map((t) => {
             const Icon = t.icon;

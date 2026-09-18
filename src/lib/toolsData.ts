@@ -18,7 +18,7 @@ export const TOOLS: Tool[] = [
     emoji: "🏆",
     titleKm: "Mythic ដល់ 100 Star",
     titleEn: "Mythic to 100 Stars",
-    descKm: "មគ្គុទ្ទេសក៍ឡើងពី Mythic ដល់ 100 Star ក្នុង MLBB",
+    descKm: "Guideឡើងពី Mythic ដល់ 100 Star ក្នុង MLBB",
     descEn: "Guide to climb from Mythic to 100 Stars in MLBB",
     href: "/tools/rank-mythic",
     accent: "#f5c542",

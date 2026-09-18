@@ -37,7 +37,7 @@ export const FF_PETS: FFPet[] = [
   { id: "rockie", name: "Rockie", emoji: "🐺", role: "utility", tier: "S", accent: "#22c55e",
     skillKm: "កាត់បន្ថយ cooldown ជំនាញ", skillEn: "Reduces active skill cooldown",
     bestForKm: "តួអង្គដែលមានជំនាញល្អ (Alok, Chrono)", bestForEn: "Skill-heavy characters (Alok, Chrono)" },
-  { id: "dreki", name: "Dreki", emoji: "🐉", role: "attack", tier: "S", accent: "#ef4444",
+  { id: "drex", name: "Drex", emoji: "🐉", role: "attack", tier: "S", accent: "#ef4444",
     skillKm: "បង្កើនកម្រិត HP អតិបរមា និងការពារ", skillEn: "Boosts max HP and damage reduction",
     bestForKm: "ការប្រយុទ្ធជិតដែលគ្រោះថ្នាក់", bestForEn: "Tough close-range fights" },
 
@@ -71,25 +71,12 @@ export const FF_PETS: FFPet[] = [
   { id: "poring", name: "Poring", emoji: "🩷", role: "utility", tier: "B", accent: "#22c55e",
     skillKm: "បង្កើនការប្រមូលធនធាន", skillEn: "Boosts loot collection",
     bestForKm: "ការប្រមូលធនធានលឿន", bestForEn: "Fast looting" },
-  { id: "spirit_fox", name: "Spirit Fox", emoji: "🦝", role: "attack", tier: "B", accent: "#ef4444",
+  { id: "zorro", name: "Zorro", emoji: "🦝", role: "attack", tier: "B", accent: "#ef4444",
     skillKm: "បង្កើនខូចខាតទៅ Gloo Wall", skillEn: "Increases damage to Gloo Walls",
     bestForKm: "ការវាយបំផ្លាញ Gloo Wall សត្រូវ", bestForEn: "Breaking enemy walls" },
-  { id: "mestre_trigo", name: "Mestre Trigo", emoji: "🐵", role: "utility", tier: "B", accent: "#22c55e",
+  { id: "guru", name: "Guru", emoji: "🐵", role: "utility", tier: "B", accent: "#22c55e",
     skillKm: "បង្កើនល្បឿនផ្លាស់ទីសម្ព័ន្ធ", skillEn: "Boosts squad movement speed",
     bestForKm: "ក្រុមដែលចង់លឿន", bestForEn: "Fast-moving squads" },
-  // ===== ADDITIONAL PETS =====
-  { id: "dreki", name: "Dreki", emoji: "🐉", role: "attack", tier: "A", accent: "#ef4444",
-    skillKm: "បង្កើនការខូចខាតពេលវាយសត្រូវដែលមាន HP ទាប", skillEn: "Increases damage to low HP enemies",
-    bestForKm: "ការវាយប្រហារបន្ត", bestForEn: "Chained attacks" },
-  { id: "moony", name: "Moony", emoji: "🌙", role: "utility", tier: "A", accent: "#22c55e",
-    skillKm: "បង្កើន EP ពេលប្រើ medkit និងសង្គ្រោះ HP", skillEn: "Restores EP when using medkits and heals HP",
-    bestForKm: "ការលេងយូរ", bestForEn: "Long matches" },
-  { id: "robo", name: "Robo", emoji: "🤖", role: "support", tier: "A", accent: "#22c55e",
-    skillKm: "បង្កើតខែលការពារ 200 HP និងបង្កើនល្បឿន", skillEn: "Deploys 200 HP shield and boosts speed",
-    bestForKm: "ការពារខ្លួនឯង", bestForEn: "Self defense" },
-  { id: "shiva", name: "Shiva", emoji: "🐯", role: "attack", tier: "S", accent: "#ef4444",
-    skillKm: "បង្កើនការខូចខាត និងល្បឿនពេលសម្លាប់សត្រូវ", skillEn: "Boosts damage and speed after kills",
-    bestForKm: "ការវាយប្រហារលឿន", bestForEn: "Aggressive rushing" },
 ];
 
 export function getPetCount(): number {
