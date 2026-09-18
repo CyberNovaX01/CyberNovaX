@@ -72,6 +72,7 @@ export function Header({
     { href: "/mlbb", label: "MLBB" },
     { href: "/news", label: t("nav.news") },
     { href: "/patch", label: t("nav.patch") },
+    { href: "/blog", label: "Blog" },
   ];
 
   return (
