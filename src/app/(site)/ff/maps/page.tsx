@@ -1,13 +1,45 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Map as MapIcon, Filter, Users, Ruler, Flame } from "lucide-react";
+import { ArrowLeft, Map, Filter, Users, Ruler, Flame, Lightbulb } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { FadeIn } from "@/components/FadeIn";
 import { MoodSetter } from "@/components/MoodSetter";
-import { FF_MAPS, MODE_LABELS, getMapCount, type MapMode } from "@/lib/ffMaps";
+import {
+  FF_MAPS, MODE_LABELS, getMapCount, type MapMode,
+} from "@/lib/ffMaps";
 
 const MODES: MapMode[] = ["br", "cs", "special"];
+
+function MapImage({ id, emoji, accent, name }: { id: string; emoji: string; accent: string; name: string }) {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div
+        className="grid h-48 w-full place-items-center rounded-2xl text-7xl"
+        style={{ background: accent + "20", boxShadow: "0 0 0 3px " + accent + "55" }}
+      >
+        {emoji}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="h-48 w-full overflow-hidden rounded-2xl"
+      style={{ background: accent + "20", boxShadow: "0 0 0 3px " + accent + "55" }}
+    >
+      <img
+        src={"/images/ff/maps/" + id + ".png"}
+        alt={name}
+        className="h-full w-full object-cover"
+        loading="lazy"
+        onError={() => setHasError(true)}
+      />
+    </div>
+  );
+}
 
 export default function MapsPage() {
   const { lang } = useLang();
@@ -42,7 +74,7 @@ export default function MapsPage() {
 
           <FadeIn>
             <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.25em]" style={{ color: "#22d3ee" }}>
-              <MapIcon size={13} />
+              <Map size={13} />
               MAPS
             </div>
             <h1 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
@@ -60,14 +92,14 @@ export default function MapsPage() {
             </h1>
             <p className="mt-3 max-w-2xl text-sm text-muted">
               {km
-                ? getMapCount() + " ផែនទី — យុទ្ធសាស្ត្រ និង hot drops"
-                : getMapCount() + " maps — strategies and hot drops"}
+                ? getMapCount() + " ផែនទី — ព័ត៌មានលម្អិត គន្លឹះ និង hot drop"
+                : getMapCount() + " maps — detailed info, tips and hot drops"}
             </p>
           </FadeIn>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:pt-14">
         <FadeIn>
           <div className="mb-6 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-faint">
@@ -85,14 +117,14 @@ export default function MapsPage() {
             >
               {km ? "ទាំងអស់" : "All"} ({getMapCount()})
             </button>
-            {MODES.map((mode) => {
-              const info = MODE_LABELS[mode];
-              const count = FF_MAPS.filter((m) => m.mode === mode).length;
-              const active = filter === mode;
+            {MODES.map((m) => {
+              const info = MODE_LABELS[m];
+              const count = FF_MAPS.filter((mp) => mp.mode === m).length;
+              const active = filter === m;
               return (
                 <button
-                  key={mode}
-                  onClick={() => setFilter(mode)}
+                  key={m}
+                  onClick={() => setFilter(m)}
                   className="rounded-full border px-3 py-1 text-xs font-bold transition-all"
                   style={{
                     borderColor: active ? info.color : "var(--color-line)",
@@ -106,108 +138,98 @@ export default function MapsPage() {
             })}
           </div>
         </FadeIn>
+      </section>
 
-        <div className="grid gap-5 lg:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6">
+        <div className="space-y-6">
           {filtered.map((m, i) => {
             const modeInfo = MODE_LABELS[m.mode];
             return (
-              <FadeIn key={m.id} delay={i * 60}>
+              <FadeIn key={m.id} delay={i * 40}>
                 <div
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-surface transition-all hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-2xl border bg-surface transition-all"
                   style={{
                     borderColor: "var(--color-line)",
-                    boxShadow: "0 20px 60px -30px " + m.accent + "88",
+                    boxShadow: "0 20px 50px -32px " + m.accent + "88",
                   }}
                 >
-                  {/* header */}
-                  <div
-                    className="relative overflow-hidden border-b border-line p-5"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, " + m.accent + "25 0%, " + m.accent + "08 50%, transparent 100%)",
-                    }}
-                  >
-                    <div
-                      className="absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl opacity-30"
-                      style={{ background: m.accent }}
-                    />
-                    <div className="relative flex items-start gap-4">
-                      <span
-                        className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl text-4xl transition-transform group-hover:scale-110"
-                        style={{
-                          background: m.accent + "20",
-                          boxShadow: "0 0 0 1px " + m.accent + "55",
-                        }}
-                      >
-                        {m.emoji}
-                      </span>
-                      <div className="min-w-0 flex-1">
+                  <div className="grid gap-6 p-6 lg:grid-cols-[280px_1fr]">
+                    {/* Image */}
+                    <MapImage id={m.id} emoji={m.emoji} accent={m.accent} name={m.name} />
+
+                    {/* Info */}
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-2xl font-black tracking-tight">{m.name}</h3>
                         <span
-                          className="inline-block rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wider"
+                          className="rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase"
                           style={{ background: modeInfo.color + "22", color: modeInfo.color }}
                         >
                           {km ? modeInfo.km : modeInfo.en}
                         </span>
-                        <h2 className="mt-2 text-xl font-black tracking-tight">
-                          {m.name}
-                        </h2>
-                        <div className="mt-2 flex flex-wrap items-center gap-3 text-[11px] text-faint">
-                          <span className="inline-flex items-center gap-1">
-                            <Ruler size={11} /> {m.sizeKm}
-                          </span>
-                          <span className="inline-flex items-center gap-1">
-                            <Users size={11} /> {m.players} {km ? "អ្នកលេង" : "players"}
-                          </span>
+                      </div>
+
+                      <p className="mt-3 text-sm leading-relaxed text-muted">
+                        {km ? m.descKm : m.descEn}
+                      </p>
+
+                      {/* Stats */}
+                      <div className="mt-4 grid grid-cols-2 gap-2">
+                        <div className="flex items-center gap-2 rounded-lg border border-line bg-black/20 px-3 py-2">
+                          <Ruler size={13} className="text-cyan-400" />
+                          <div>
+                            <div className="text-[9px] font-bold uppercase text-faint">
+                              {km ? "ទំហំ" : "SIZE"}
+                            </div>
+                            <div className="text-sm font-black text-cyan-400">{m.sizeKm}</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 rounded-lg border border-line bg-black/20 px-3 py-2">
+                          <Users size={13} className="text-orange-400" />
+                          <div>
+                            <div className="text-[9px] font-bold uppercase text-faint">
+                              {km ? "អ្នកលេង" : "PLAYERS"}
+                            </div>
+                            <div className="text-sm font-black text-orange-400">{m.players}</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
 
-                  {/* body */}
-                  <div className="flex flex-1 flex-col gap-4 p-5">
-                    <p className="text-sm leading-relaxed text-muted">
-                      {km ? m.descKm : m.descEn}
-                    </p>
-
-                    {/* hot drops */}
-                    <div>
-                      <div className="mb-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider" style={{ color: m.accent }}>
-                        <Flame size={11} />
-                        {km ? "ទីតាំងពេញនិយម" : "Hot Drops"}
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {(km ? m.hotDropsKm : m.hotDropsEn).map((h) => (
-                          <span
-                            key={h}
-                            className="rounded-md border px-2 py-0.5 text-[11px] font-bold"
-                            style={{
-                              borderColor: m.accent + "40",
-                              color: m.accent,
-                              background: m.accent + "10",
-                            }}
-                          >
-                            {h}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* tips */}
-                    <div className="border-t border-line pt-4">
-                      <div className="mb-2 text-[10px] font-black uppercase tracking-wider text-faint">
-                        {km ? "គន្លឹះ" : "Tips"}
-                      </div>
-                      <ul className="space-y-1.5">
-                        {(km ? m.tipsKm : m.tipsEn).map((tip, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs text-muted">
+                      {/* Hot Drops */}
+                      <div className="mt-4">
+                        <div className="mb-2 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-red-400">
+                          <Flame size={12} />
+                          {km ? "តំបន់ Hot Drop" : "HOT DROPS"}
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {(km ? m.hotDropsKm : m.hotDropsEn).map((drop) => (
                             <span
-                              className="mt-1.5 h-1 w-1 shrink-0 rounded-full"
-                              style={{ background: m.accent }}
-                            />
-                            <span>{tip}</span>
-                          </li>
-                        ))}
-                      </ul>
+                              key={drop}
+                              className="rounded-lg border border-red-500/30 bg-red-500/10 px-2.5 py-1 text-[11px] font-bold text-red-300"
+                            >
+                              {drop}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Tips */}
+                      <div className="mt-4 flex items-start gap-2 rounded-lg border border-line bg-black/20 p-3">
+                        <Lightbulb size={14} className="mt-0.5 shrink-0 text-yellow-400" />
+                        <div className="min-w-0 flex-1">
+                          <div className="text-[10px] font-black uppercase text-yellow-400">
+                            {km ? "គន្លឹះ" : "TIPS"}
+                          </div>
+                          <ul className="mt-1.5 space-y-1">
+                            {(km ? m.tipsKm : m.tipsEn).map((tip, idx) => (
+                              <li key={idx} className="flex gap-1.5 text-[11px] leading-snug text-muted">
+                                <span className="text-faint">•</span>
+                                <span>{tip}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
