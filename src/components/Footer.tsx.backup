@@ -29,26 +29,10 @@ export function Footer() {
               {t("hero.sub")}
             </p>
             <div className="mt-5 flex gap-2">
-              <SocialBtn
-                icon={<Globe size={15} />}
-                href="https://web.facebook.com/sakura.sakamichi.167744/"
-                label="Facebook"
-              />
-              <SocialBtn
-                icon={<Send size={15} />}
-                href="https://t.me/SRENG_PANHABOTRA"
-                label="Telegram"
-              />
-              <SocialBtn
-                icon={<Play size={15} />}
-                href="https://www.tiktok.com/@cybernova.x8"
-                label="TikTok"
-              />
-              <SocialBtn
-                icon={<Mail size={15} />}
-                href="tel:093355877"
-                label="Phone"
-              />
+              <SocialBtn icon={<Globe size={15} />} href="/" label="Website" />
+              <SocialBtn icon={<Send size={15} />} href="/" label="Telegram" />
+              <SocialBtn icon={<Play size={15} />} href="/" label="YouTube" />
+              <SocialBtn icon={<Mail size={15} />} href="/contact" label="Email" />
             </div>
           </div>
 
@@ -84,13 +68,10 @@ export function Footer() {
           <FooterCol
             title={t("footer.connect")}
             links={[
-              {
-                href: "https://web.facebook.com/sakura.sakamichi.167744/",
-                label: "Facebook",
-              },
-              { href: "https://t.me/SRENG_PANHABOTRA", label: "Telegram" },
-              { href: "https://www.tiktok.com/@cybernova.x8", label: "TikTok" },
-              { href: "tel:093355877", label: "093 355 877" },
+              { href: "/contact", label: "Facebook" },
+              { href: "/contact", label: "Telegram" },
+              { href: "/contact", label: "YouTube" },
+              { href: "/contact", label: "Discord" },
             ]}
           />
         </div>
@@ -137,34 +118,16 @@ function FooterCol({
         {title}
       </h3>
       <ul className="space-y-2.5">
-        {links.map((l) => {
-          const isExternal =
-            l.href.startsWith("http") ||
-            l.href.startsWith("tel:") ||
-            l.href.startsWith("mailto:");
-
-          return (
-            <li key={l.label}>
-              {isExternal ? (
-                <a
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted transition-colors hover:text-gold"
-                >
-                  {l.label}
-                </a>
-              ) : (
-                <Link
-                  href={l.href}
-                  className="text-sm text-muted transition-colors hover:text-gold"
-                >
-                  {l.label}
-                </Link>
-              )}
-            </li>
-          );
-        })}
+        {links.map((l) => (
+          <li key={l.label}>
+            <Link
+              href={l.href}
+              className="text-sm text-muted transition-colors hover:text-gold"
+            >
+              {l.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
@@ -179,30 +142,12 @@ function SocialBtn({
   href: string;
   label: string;
 }) {
-  const isExternal =
-    href.startsWith("http") ||
-    href.startsWith("tel:") ||
-    href.startsWith("mailto:");
-
-  const className =
-    "grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface/60 text-muted transition-all hover:border-gold/40 hover:text-gold";
-
-  if (isExternal) {
-    return (
-      <a
-        href={href}
-        aria-label={label}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-      >
-        {icon}
-      </a>
-    );
-  }
-
   return (
-    <Link href={href} aria-label={label} className={className}>
+    <Link
+      href={href}
+      aria-label={label}
+      className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface/60 text-muted transition-all hover:border-gold/40 hover:text-gold"
+    >
       {icon}
     </Link>
   );
