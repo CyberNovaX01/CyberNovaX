@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Mail, MessageCircle, Send, Check, Globe } from "lucide-react";
+import { Mail, MessageCircle, Send, Check, Globe, Phone } from "lucide-react";
 import { MoodSetter } from "@/components/MoodSetter";
 import { FadeIn } from "@/components/FadeIn";
 import { useLang } from "@/lib/i18n";
@@ -17,9 +17,40 @@ export default function ContactPage() {
     e.preventDefault();
     const subject = encodeURIComponent("Contact from " + name);
     const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
-    window.location.href = "mailto:hello@gamingguide.com?subject=" + subject + "&body=" + body;
+    window.location.href = "mailto:cybernova0101@gmail.com?subject=" + subject + "&body=" + body;
     setSent(true);
   };
+
+  const socialLinks = [
+    {
+      label: "Facebook",
+      value: "sakura.sakamichi.167744",
+      href: "https://web.facebook.com/sakura.sakamichi.167744/",
+      emoji: "📘",
+      color: "#1877F2",
+    },
+    {
+      label: "TikTok",
+      value: "@cybernova.x8",
+      href: "https://www.tiktok.com/@cybernova.x8",
+      emoji: "🎵",
+      color: "#ff0050",
+    },
+    {
+      label: "Telegram",
+      value: "@SRENG_PANHABOTRA",
+      href: "https://t.me/SRENG_PANHABOTRA",
+      emoji: "✈️",
+      color: "#229ED9",
+    },
+    {
+      label: km ? "ទូរស័ព្ទ" : "Phone",
+      value: "093 355 877",
+      href: "tel:093355877",
+      emoji: "📞",
+      color: "#22c55e",
+    },
+  ];
 
   return (
     <>
@@ -78,7 +109,7 @@ export default function ContactPage() {
           <FadeIn>
             <div className="space-y-4">
               <a
-                href="mailto:hello@gamingguide.com"
+                href="mailto:cybernova0101@gmail.com"
                 className="group flex items-start gap-4 rounded-2xl border border-line bg-surface p-5 transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 20px 50px -30px #a855f788" }}
               >
@@ -90,7 +121,24 @@ export default function ContactPage() {
                 </span>
                 <div className="min-w-0">
                   <div className="text-sm font-black">{km ? "អ៊ីមែល" : "Email"}</div>
-                  <div className="mt-0.5 text-xs text-muted">hello@gamingguide.com</div>
+                  <div className="mt-0.5 text-xs text-muted break-all">cybernova0101@gmail.com</div>
+                </div>
+              </a>
+
+              <a
+                href="tel:093355877"
+                className="group flex items-start gap-4 rounded-2xl border border-line bg-surface p-5 transition-all hover:-translate-y-0.5"
+                style={{ boxShadow: "0 20px 50px -30px #22c55e88" }}
+              >
+                <span
+                  className="grid h-12 w-12 shrink-0 place-items-center rounded-xl transition-transform group-hover:scale-110"
+                  style={{ background: "#22c55e20", color: "#22c55e", boxShadow: "0 0 0 1px #22c55e55" }}
+                >
+                  <Phone size={22} />
+                </span>
+                <div className="min-w-0">
+                  <div className="text-sm font-black">{km ? "ទូរស័ព្ទ" : "Phone"}</div>
+                  <div className="mt-0.5 text-xs text-muted">093 355 877</div>
                 </div>
               </a>
 
@@ -112,19 +160,45 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* SOCIAL MEDIA — CLICKABLE LIST */}
               <div
-                className="flex items-start gap-4 rounded-2xl border border-line bg-surface p-5"
-                style={{ boxShadow: "0 20px 50px -30px #22c55e88" }}
+                className="rounded-2xl border border-line bg-surface p-5"
+                style={{ boxShadow: "0 20px 50px -30px #a855f788" }}
               >
-                <span
-                  className="grid h-12 w-12 shrink-0 place-items-center rounded-xl"
-                  style={{ background: "#22c55e20", color: "#22c55e", boxShadow: "0 0 0 1px #22c55e55" }}
-                >
-                  <Globe size={22} />
-                </span>
-                <div className="min-w-0">
-                  <div className="text-sm font-black">{km ? "បណ្តាញសង្គម" : "Social Media"}</div>
-                  <div className="mt-0.5 text-xs text-muted">Facebook · Youtube</div>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="grid h-8 w-8 place-items-center rounded-lg"
+                    style={{ background: "#a855f720", color: "#a855f7" }}
+                  >
+                    <Globe size={16} />
+                  </span>
+                  <div className="text-sm font-black">
+                    {km ? "បណ្តាញសង្គម" : "Social Media"}
+                  </div>
+                </div>
+
+                <div className="mt-4 space-y-2">
+                  {socialLinks.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target={s.href.startsWith("tel:") ? undefined : "_blank"}
+                      rel={s.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
+                      className="group flex items-center gap-3 rounded-xl border border-line bg-black/20 px-3 py-2.5 transition-all hover:-translate-y-0.5 hover:border-gold/40"
+                    >
+                      <span
+                        className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-base"
+                        style={{ background: s.color + "20", color: s.color }}
+                      >
+                        {s.emoji}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs font-black">{s.label}</div>
+                        <div className="truncate text-[11px] text-muted">{s.value}</div>
+                      </div>
+                      <Send size={12} className="text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-gold" />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
