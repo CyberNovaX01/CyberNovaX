@@ -17,7 +17,7 @@ export default function ContactPage() {
     e.preventDefault();
     const subject = encodeURIComponent("Contact from " + name);
     const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
-    window.location.href = "mailto:cybernova0101@gmail.com?subject=" + subject + "&body=" + body;
+    window.location.href = "mailto:cybernovax0101@gmail.com?subject=" + subject + "&body=" + body;
     setSent(true);
   };
 
@@ -109,7 +109,7 @@ export default function ContactPage() {
           <FadeIn>
             <div className="space-y-4">
               <a
-                href="mailto:cybernova0101@gmail.com"
+                href="mailto:cybernovax0101@gmail.com"
                 className="group flex items-start gap-4 rounded-2xl border border-line bg-surface p-5 transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 20px 50px -30px #a855f788" }}
               >
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 </span>
                 <div className="min-w-0">
                   <div className="text-sm font-black">{km ? "អ៊ីមែល" : "Email"}</div>
-                  <div className="mt-0.5 text-xs text-muted break-all">cybernova0101@gmail.com</div>
+                  <div className="mt-0.5 text-xs text-muted break-all">cybernovax0101@gmail.com</div>
                 </div>
               </a>
 

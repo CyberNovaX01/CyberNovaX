@@ -130,11 +130,11 @@ export function LegalPage({
                 ? "បើមានសំណួរ សូមទាក់ទងមកយើងតាម "
                 : "If you have questions, contact us at "}
               <a
-                href="mailto:hello@gamingguide.com"
+                href="mailto:cybernovax0101@gmail.com"
                 className="font-bold transition-colors hover:underline"
                 style={{ color }}
               >
-                hello@gamingguide.com
+                cybernovax0101@gmail.com
               </a>
             </p>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Gamepad2, Globe, Send, Play, Mail, AlertCircle } from "lucide-react";
+import { Gamepad2, Globe, Send, Play, Mail, AlertCircle, Shield } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
 export function Footer() {
@@ -58,7 +58,7 @@ export function Footer() {
               { href: "/ff-hub", label: "Free Fire" },
               { href: "/mlbb", label: "Mobile Legends" },
               { href: "/mlbb/tier", label: "Tier List" },
-              { href: "/news", label: "News" },
+              { href: "/blog", label: "Blog" },
               { href: "/patch", label: "Patches" },
             ]}
           />
@@ -68,7 +68,7 @@ export function Footer() {
             links={[
               { href: "/about", label: t("footer.about") },
               { href: "/contact", label: t("footer.contact") },
-              { href: "/news", label: "Blog" },
+              { href: "/news", label: "News" },
             ]}
           />
 
@@ -95,19 +95,51 @@ export function Footer() {
           />
         </div>
 
-        {/* DISCLAIMER */}
-        <div className="mt-12 rounded-xl border border-line bg-surface/40 p-4">
+        {/* ENHANCED DISCLAIMER */}
+        <div className="mt-12 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-5">
           <div className="flex items-start gap-3">
-            <AlertCircle size={16} className="mt-0.5 shrink-0 text-yellow-500" />
-            <div className="space-y-2 text-xs leading-relaxed text-muted">
-              <p>
-                <strong className="text-fg">Disclaimer:</strong> CyberNovaX is an independent fan site created for informational and educational purposes only. We are <strong>not affiliated with, endorsed by, or sponsored by</strong> Garena Free Fire or Moonton Mobile Legends: Bang Bang.
-              </p>
-              <p>
-                <strong className="text-fg">Credits:</strong> All game-related images, characters, weapons, and trademarks are the property of their respective owners — <strong>© Garena Free Fire</strong> and <strong>© Moonton Mobile Legends: Bang Bang</strong>. Images are used under fair use for informational purposes.
-              </p>
-              <p>
-                If you are a copyright owner and believe content on this site infringes your rights, please <Link href="/contact" className="text-gold hover:underline">contact us</Link> and we will respond promptly.
+            <AlertCircle size={18} className="mt-0.5 shrink-0 text-yellow-500" />
+            <div className="space-y-3 text-xs leading-relaxed text-muted">
+              <div>
+                <p className="font-black text-fg">Disclaimer</p>
+                <p>
+                  CyberNovaX is an independent fan site created for informational and educational purposes only. We are <strong className="text-fg">not affiliated with, endorsed by, or sponsored by</strong> Garena Free Fire, Moonton Mobile Legends: Bang Bang, or any other game publishers mentioned on this site.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-black text-fg">Credits & Fair Use</p>
+                <p>
+                  All game-related images, characters, weapons, logos, and trademarks are the property of their respective owners — <strong className="text-fg">© Garena Free Fire</strong> and <strong className="text-fg">© Moonton Mobile Legends: Bang Bang</strong>. Such materials are used under the <strong className="text-fg">Fair Use Doctrine</strong> for the purpose of commentary, news reporting, and educational guidance. We do not claim ownership of any third-party intellectual property.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-black text-fg">DMCA & Copyright Removal Request</p>
+                <p>
+                  If you are a copyright owner (or authorized to act on behalf of one) and believe that content on this site infringes your rights, please contact us at{" "}
+                  <a
+                    href="mailto:cybernovax0101@gmail.com"
+                    className="text-gold hover:underline font-bold"
+                  >
+                    cybernovax0101@gmail.com
+                  </a>{" "}
+                  with the subject line <strong className="text-fg">"DMCA Takedown Request"</strong>. Please include:
+                </p>
+                <ul className="ml-5 mt-1 list-disc space-y-0.5">
+                  <li>Identification of the copyrighted work</li>
+                  <li>URL of the allegedly infringing content</li>
+                  <li>Your contact information</li>
+                  <li>A statement of good faith belief</li>
+                </ul>
+                <p className="mt-1">
+                  We will review and <strong className="text-fg">respond within 48 hours</strong> and promptly remove any content found to be infringing. We respect intellectual property rights and cooperate fully with copyright holders.
+                </p>
+              </div>
+
+              <p className="flex items-center gap-1.5 pt-1 text-fg">
+                <Shield size={12} className="text-green-400" />
+                <span className="font-black">Last updated:</span> September 2026
               </p>
             </div>
           </div>

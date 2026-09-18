@@ -72,14 +72,14 @@ export default function PrivacyPage() {
               "• ចូលមើលទិន្នន័យដែលយើងរក្សាទុក",
               "• ស្នើសុំលុបទិន្នន័យ",
               "• បដិសេធ cookies",
-              "សម្រាប់សំណើ សូមទាក់ទងតាម hello@gamingguide.com",
+              "សម្រាប់សំណើ សូមទាក់ទងតាម cybernovax0101@gmail.com",
             ],
             bodyEn: [
               "You have the right to:",
               "• Access data we store",
               "• Request data deletion",
               "• Opt out of cookies",
-              "For requests, contact hello@gamingguide.com",
+              "For requests, contact cybernovax0101@gmail.com",
             ],
           },
           {
