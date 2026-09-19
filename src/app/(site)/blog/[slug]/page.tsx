@@ -1,11 +1,12 @@
 "use client";
 import { use } from "react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { MoodSetter } from "@/components/MoodSetter";
 import { FadeIn } from "@/components/FadeIn";
 import { useLang } from "@/lib/i18n";
 import { getPostBySlug, getAllPosts } from "@/lib/blogData";
+import ShareButtons from "@/components/ShareButtons";
 
 function formatInline(text: string) {
   return text.replace(
@@ -198,57 +199,14 @@ export default function BlogPostPage({
           <article>{renderContent(content)}</article>
         </FadeIn>
 
-        {/* SHARE */}
+        {/* SHARE BUTTONS */}
         <FadeIn delay={200}>
-          <div className="mt-12 flex items-center justify-between rounded-2xl border border-line bg-surface/60 p-5 backdrop-blur-md">
-            <div className="flex items-center gap-2 text-sm font-black text-muted">
-              <Share2 size={16} />
-              {lang === "km" ? "ចែករំលែក" : "Share"}
-            </div>
-            <div className="flex gap-2">
-              <a
-                href={
-                  "https://www.facebook.com/sharer/sharer.php?u=" +
-                  encodeURIComponent(
-                    "https://cyber-nova-x.vercel.app/blog/" + slug
-                  )
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grid h-9 w-9 place-items-center rounded-lg border border-line bg-surface text-muted transition-all hover:border-[#1877F2]/60 hover:text-[#1877F2]"
-                aria-label="Share on Facebook"
-              >
-                📘
-              </a>
-              <a
-                href={
-                  "https://t.me/share/url?url=" +
-                  encodeURIComponent(
-                    "https://cyber-nova-x.vercel.app/blog/" + slug
-                  )
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grid h-9 w-9 place-items-center rounded-lg border border-line bg-surface text-muted transition-all hover:border-[#229ED9]/60 hover:text-[#229ED9]"
-                aria-label="Share on Telegram"
-              >
-                ✈️
-              </a>
-              <a
-                href={
-                  "https://twitter.com/intent/tweet?url=" +
-                  encodeURIComponent(
-                    "https://cyber-nova-x.vercel.app/blog/" + slug
-                  )
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grid h-9 w-9 place-items-center rounded-lg border border-line bg-surface text-muted transition-all hover:border-cyan-400/60 hover:text-cyan-400"
-                aria-label="Share on Twitter"
-              >
-                🐦
-              </a>
-            </div>
+          <div className="mt-12">
+            <ShareButtons
+              url={`https://cyber-nova-x.vercel.app/blog/${slug}`}
+              title={title}
+              accent={post.categoryColor}
+            />
           </div>
         </FadeIn>
 

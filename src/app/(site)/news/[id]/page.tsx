@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { publicClient } from "@/lib/supabase";
 import { NEWS } from "@/lib/siteData";
+import ShareButtons from "@/components/ShareButtons";
 
 type NewsRow = {
   id: string;
@@ -241,6 +242,15 @@ export default async function NewsDetailPage({
         <p className="text-sm font-bold italic leading-relaxed text-white/90 sm:text-base">
           {item.excerpt_km}
         </p>
+      </div>
+
+      {/* SHARE BUTTONS */}
+      <div className="mt-6">
+        <ShareButtons
+          url={`https://cyber-nova-x.vercel.app/news/${item.id}`}
+          title={item.title_km}
+          accent={item.accent}
+        />
       </div>
 
       {/* CONTENT */}
