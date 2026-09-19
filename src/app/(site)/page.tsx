@@ -4,18 +4,74 @@ import Link from "next/link";
 import {
   Newspaper, Zap, ArrowRight, Calendar,
   TrendingUp, TrendingDown, Minus, Sparkles,
-  Users,
+  Users, Trophy, Gauge, Target, Smartphone,
+  Medal, Crosshair, Wrench,
 } from "lucide-react";
 import { MoodSetter } from "@/components/MoodSetter";
 import { LiveStatsBar } from "@/components/LiveStatsBar";
-import { MetaTierPreview } from "@/components/MetaTierPreview";
-import { FeaturedGuides } from "@/components/FeaturedGuides";
 import { FadeIn } from "@/components/FadeIn";
 import { NEWS, PATCHES } from "@/lib/siteData";
 import { useLang } from "@/lib/i18n";
 
 const KM_M = ["មករា","កុម្ភៈ","មីនា","មេសា","ឧសភា","មិថុនា","កក្កដា","សីហា","កញ្ញា","តុលា","វិច្ឆិកា","ធ្នូ"];
 const EN_M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+const QUICK_TOOLS = [
+  {
+    icon: Trophy,
+    href: "/mlbb/tier",
+    labelKm: "Tier List",
+    labelEn: "Tier List",
+    descKm: "ចំណាត់ថ្នាក់ Hero",
+    descEn: "Hero Ranking",
+    color: "#f5c542",
+  },
+  {
+    icon: Gauge,
+    href: "/ff/sensitivity",
+    labelKm: "Sensitivity",
+    labelEn: "Sensitivity",
+    descKm: "កំណត់ការបាញ់",
+    descEn: "Settings",
+    color: "#22d3ee",
+  },
+  {
+    icon: Target,
+    href: "/mlbb/builds",
+    labelKm: "Builds",
+    labelEn: "Builds",
+    descKm: "ឧបករណ៍ណែនាំ",
+    descEn: "Item Guide",
+    color: "#a855f7",
+  },
+  {
+    icon: Smartphone,
+    href: "/tools/phone-performance",
+    labelKm: "Phone",
+    labelEn: "Phone Perf",
+    descKm: "សាកល្បងទូរស័ព្ទ",
+    descEn: "Test Device",
+    color: "#22c55e",
+  },
+  {
+    icon: Medal,
+    href: "/tools/rank-mythic",
+    labelKm: "Rank",
+    labelEn: "Rank Calc",
+    descKm: "គណនាចំណាត់ថ្នាក់",
+    descEn: "Calculator",
+    color: "#ec4899",
+  },
+  {
+    icon: Crosshair,
+    href: "/tools/top-gun",
+    labelKm: "Top Gun",
+    labelEn: "Top Gun",
+    descKm: "ហ្វឹកហាត់បាញ់",
+    descEn: "Aim Training",
+    color: "#ef4444",
+  },
+];
 
 export default function HomePage() {
   const { lang } = useLang();
@@ -32,9 +88,8 @@ export default function HomePage() {
     <>
       <MoodSetter mood={mood} />
 
-      {/* HERO SECTION */}
+      {/* ═══════════════ HERO SECTION ═══════════════ */}
       <section className="relative overflow-hidden px-4 pt-6 pb-10 sm:px-6 sm:pt-8 lg:pt-10 lg:pb-14">
-        {/* BACKGROUND IMAGE — ONLY TOP PORTION */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[70vh] sm:h-[60vh]">
           <img
             src="/images/natan-bg.jpg"
@@ -44,7 +99,6 @@ export default function HomePage() {
               (e.target as HTMLImageElement).style.display = "none";
             }}
           />
-          {/* Dark Overlay */}
           <div
             className="absolute inset-0"
             style={{
@@ -54,16 +108,14 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Grid Pattern */}
-        <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]"
+        <div
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]"
           style={{
             backgroundImage:
               "linear-gradient(#22d3ee 1px, transparent 1px), linear-gradient(90deg, #22d3ee 1px, transparent 1px)",
             backgroundSize: "56px 56px",
           }}
         />
-
-        {/* Color Glow */}
         <div className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[120px]" />
         <div className="pointer-events-none absolute right-1/4 top-1/2 z-0 h-64 w-64 rounded-full bg-purple-500/15 blur-[100px]" />
 
@@ -72,7 +124,6 @@ export default function HomePage() {
           <FadeIn>
             <div className="relative mx-auto flex justify-center">
               <div className="relative">
-                {/* LOGO ON TOP OF NATAN'S HEAD */}
                 <div className="absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
                   <div className="relative">
                     <div
@@ -95,7 +146,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* NATAN IMAGE — SMALLER */}
                 <img
                   src="/images/mlbb/hero-featured-cropped-removebg-preview.png"
                   alt="Natan"
@@ -108,7 +158,6 @@ export default function HomePage() {
             </div>
           </FadeIn>
 
-          {/* BRAND NAME */}
           <FadeIn delay={150}>
             <div className="mt-2 text-center">
               <div
@@ -128,7 +177,6 @@ export default function HomePage() {
             </div>
           </FadeIn>
 
-          {/* SUBTITLE */}
           <FadeIn delay={250}>
             <h1 className="mt-4 text-center text-xl font-black tracking-tight text-white sm:text-2xl lg:text-3xl">
               {lang === "km"
@@ -137,9 +185,8 @@ export default function HomePage() {
             </h1>
           </FadeIn>
 
-          {/* GAME CARDS — NOW VISIBLE */}
+          {/* GAME CARDS */}
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {/* FREE FIRE CARD */}
             <FadeIn delay={350}>
               <Link
                 href="/ff-hub"
@@ -184,7 +231,7 @@ export default function HomePage() {
                     <div className="flex items-center gap-2">
                       <Users size={13} className="text-orange-400" />
                       <span className="text-xs font-bold text-white sm:text-sm">
-                        41+ {lang === "km" ? "តួអង្គ" : "Heroes"}
+                        64 {lang === "km" ? "តួអង្គ" : "Heroes"}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -203,7 +250,6 @@ export default function HomePage() {
               </Link>
             </FadeIn>
 
-            {/* MLBB CARD */}
             <FadeIn delay={450}>
               <Link
                 href="/mlbb"
@@ -248,7 +294,7 @@ export default function HomePage() {
                     <div className="flex items-center gap-2">
                       <Users size={13} className="text-cyan-400" />
                       <span className="text-xs font-bold text-white sm:text-sm">
-                        133+ {lang === "km" ? "តួអង្គ" : "Heroes"}
+                        133 {lang === "km" ? "តួអង្គ" : "Heroes"}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -270,22 +316,92 @@ export default function HomePage() {
         </div>
       </section>
 
-      <LiveStatsBar />
-      <MetaTierPreview />
-      <FeaturedGuides />
+      {/* ═══════════════ QUICK TOOLS ═══════════════ */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+        <FadeIn>
+          <div className="mb-8">
+            <span className="kicker">
+              <Wrench size={12} />
+              {lang === "km" ? "ឧបករណ៍" : "TOOLS"}
+            </span>
+            <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
+              {lang === "km" ? (
+                <>
+                  ឧបករណ៍ <span className="text-gradient">សំខាន់ៗ</span>
+                </>
+              ) : (
+                <>
+                  Essential <span className="text-gradient">Tools</span>
+                </>
+              )}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+              {lang === "km"
+                ? "ចូលលឿនទៅ Tier List, Builds, Sensitivity និងច្រើនទៀត"
+                : "Quick access to Tier List, Builds, Sensitivity and more"}
+            </p>
+          </div>
+        </FadeIn>
 
-      {/* NEWS SECTION */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {QUICK_TOOLS.map((tool, i) => {
+            const Icon = tool.icon;
+            return (
+              <FadeIn key={tool.href} delay={i * 40}>
+                <Link
+                  href={tool.href}
+                  className="group flex h-full flex-col items-center gap-2.5 rounded-2xl border border-line bg-surface/60 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-line-2"
+                  style={{
+                    boxShadow: "0 20px 40px -30px " + tool.color + "88",
+                  }}
+                >
+                  <div
+                    className="grid h-12 w-12 place-items-center rounded-xl transition-all group-hover:rotate-6 group-hover:scale-110"
+                    style={{
+                      background: tool.color + "20",
+                      color: tool.color,
+                      boxShadow: "0 0 24px -8px " + tool.color + "cc",
+                    }}
+                  >
+                    <Icon size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs font-black leading-tight text-white sm:text-sm">
+                      {lang === "km" ? tool.labelKm : tool.labelEn}
+                    </div>
+                    <div className="mt-1 text-[10px] font-bold uppercase tracking-wider text-muted">
+                      {lang === "km" ? tool.descKm : tool.descEn}
+                    </div>
+                  </div>
+                </Link>
+              </FadeIn>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ═══════════════ LIVE STATS ═══════════════ */}
+      <LiveStatsBar />
+
+      {/* ═══════════════ LATEST NEWS ═══════════════ */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <FadeIn>
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
               <span className="kicker">
                 <Newspaper size={12} />
-                {lang === "km" ? "ព័ត៌មានថ្មីៗ" : "Latest"}
+                {lang === "km" ? "ព័ត៌មានថ្មីៗ" : "LATEST"}
               </span>
               <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
-                {lang === "km" ? "ព័ត៌មាន" : "Latest"}{" "}
-                <span className="text-gradient">News</span>
+                {lang === "km" ? (
+                  <>
+                    ព័ត៌មាន <span className="text-gradient">ថ្មីៗ</span>
+                  </>
+                ) : (
+                  <>
+                    Latest <span className="text-gradient">News</span>
+                  </>
+                )}
               </h2>
             </div>
             <Link
@@ -302,8 +418,9 @@ export default function HomePage() {
           {NEWS.slice(0, 4).map((n, i) => (
             <FadeIn key={n.id} delay={i * 60}>
               <Link
-                href="/news"
+                href={"/news/" + n.id}
                 className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-1 hover:border-line-2"
+                style={{ boxShadow: "0 20px 50px -30px " + n.accent + "88" }}
               >
                 <div
                   className="relative aspect-video overflow-hidden"
@@ -334,7 +451,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PATCH SECTION */}
+      {/* ═══════════════ LATEST PATCHES ═══════════════ */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <FadeIn>
           <div className="mb-10 flex items-end justify-between gap-4">
@@ -344,8 +461,15 @@ export default function HomePage() {
                 PATCH NOTES
               </span>
               <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
-                {lang === "km" ? "បច្ចុប្បន្នភាព" : "Latest"}{" "}
-                <span className="text-gradient">Patches</span>
+                {lang === "km" ? (
+                  <>
+                    បច្ចុប្បន្នភាព <span className="text-gradient">ថ្មីៗ</span>
+                  </>
+                ) : (
+                  <>
+                    Latest <span className="text-gradient">Patches</span>
+                  </>
+                )}
               </h2>
             </div>
             <Link

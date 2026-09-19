@@ -26,7 +26,11 @@ const KM_M = ["មករា","កុម្ភៈ","មីនា","មេសា",
 const EN_M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 type GameKey = "ff" | "mlbb";
-type NewsItem = (typeof NEWS)[number];
+type NewsItem = (typeof NEWS)[number] & {
+  image_url?: string | null;
+  credit_url?: string | null;
+  credit_name?: string | null;
+};
 
 const CATEGORIES = [
   { key: "all", label: "All", icon: Layers, color: "#22d3ee" },
@@ -44,7 +48,6 @@ export default function NewsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [newsList, setNewsList] = useState<NewsItem[]>(NEWS);
 
-  // Fetch from Supabase API on mount
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -368,7 +371,6 @@ export default function NewsPage() {
   const gameNews = selectedGame === "ff" ? ffNews : mlbbNews;
   const gamePosts = selectedGame === "ff" ? ffPosts : mlbbPosts;
 
-  // FILTER BOTH NEWS AND POSTS BY CATEGORY
   const filteredNews = filterNews(gameNews, activeCategory);
   const filteredPosts = filterPosts(gamePosts, activeCategory);
 
@@ -470,17 +472,26 @@ export default function NewsPage() {
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-line-2"
                   style={{ boxShadow: "0 20px 50px -30px " + n.accent + "88" }}
                 >
-                  <div
-                    className="relative aspect-[16/10] overflow-hidden"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, " +
-                        n.accent +
-                        "60 0%, " +
-                        n.accent +
-                        "20 50%, #0a0d14 100%)",
-                    }}
-                  >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-black/20">
+                    {n.image_url ? (
+                      <img
+                        src={n.image_url}
+                        alt={n.title.km}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div
+                        className="h-full w-full"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, " +
+                            n.accent +
+                            "60 0%, " +
+                            n.accent +
+                            "20 50%, #0a0d14 100%)",
+                        }}
+                      />
+                    )}
                     <span
                       className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-wider backdrop-blur-md"
                       style={{
@@ -491,11 +502,13 @@ export default function NewsPage() {
                     >
                       {n.tag}
                     </span>
-                    <Flame
-                      size={50}
-                      className="absolute bottom-3 right-3 opacity-10"
-                      style={{ color: n.accent }}
-                    />
+                    {!n.image_url && (
+                      <Flame
+                        size={50}
+                        className="absolute bottom-3 right-3 opacity-10"
+                        style={{ color: n.accent }}
+                      />
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-4 sm:p-5">
                     <h3 className="text-base font-bold leading-snug text-fg sm:text-lg">
@@ -627,7 +640,6 @@ export default function NewsPage() {
         </section>
       )}
 
-      {/* Bottom padding */}
       <div className="pb-24" />
     </>
   );
