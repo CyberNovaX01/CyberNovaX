@@ -6,10 +6,20 @@ import { MoodSetter } from "@/components/MoodSetter";
 import { useLang } from "@/lib/i18n";
 import { UNIQUE_HEROES, ROLE_LABELS } from "@/lib/mlbbTierData";
 import { HERO_BUILDS, ITEM_DETAILS } from "@/lib/heroBuilds";
+import { EXTRA_ITEMS } from "@/lib/extraItems";
+import { META_BUILDS } from "@/lib/metaBuilds";
+import { MANUAL_BUILDS } from "@/lib/manualBuilds";
+
+// Merge base items + extra items
+const ALL_ITEMS = { ...ITEM_DETAILS, ...EXTRA_ITEMS };
+
+// Merge MANUAL (override) + META (new) + HERO (legacy fallback)
+const ALL_BUILDS = { ...HERO_BUILDS, ...META_BUILDS, ...MANUAL_BUILDS };
 
 const TALENT_SLUG_OVERRIDES: Record<string, string> = {
   "Weapon Master": "weapons-master",
   "Inspire": "talent-inspire",
+  "Thrill": "thrill-of-the-hunt",
 };
 
 function talentSlug(name: string): string {
@@ -75,7 +85,7 @@ export default function BuildsPage() {
           {list.map((h) => {
             const roleInfo = ROLE_LABELS[h.role];
             const color = roleInfo.color;
-            const heroBuild = HERO_BUILDS[h.id];
+            const heroBuild = ALL_BUILDS[h.id];
             if (!heroBuild) return null;
             const variants = heroBuild.variants;
             const tabIdx = tabs[h.id] ?? 0;
@@ -122,21 +132,22 @@ export default function BuildsPage() {
                   </div>
                   <div className="flex flex-wrap gap-3">
                     {variant.items.map((slug, ii) => {
-                      const item = ITEM_DETAILS[slug];
+                      const item = ALL_ITEMS[slug];
+                      const imageSlug = item?.slug || slug;
                       return (
                         <button
                           key={ii}
                           onClick={() => setSelectedItem(slug)}
-                          className="flex flex-col items-center gap-1.5"
+                          className="flex w-20 flex-col items-center gap-1.5"
                         >
                           <div className="relative h-14 w-14 overflow-hidden rounded-2xl border-2" style={{ borderColor: "#333", background: color + "15" }}>
-                            <img src={"/images/mlbb/items/" + slug + ".png"} alt={item?.nameEn || slug} className="h-full w-full object-contain" />
+                            <img src={"/images/mlbb/items/" + imageSlug + ".png"} alt={item?.nameEn || slug} className="h-full w-full object-contain" />
                             <span className="absolute bottom-0 right-0 rounded-tl-lg bg-purple-600 px-1 text-[9px] font-black text-white">
                               {ii + 1}
                             </span>
                           </div>
-                          <span className="w-14 truncate text-center text-[10px] font-bold text-muted">
-                            {item?.nameEn || slug}
+                          <span className="text-center text-[10px] font-bold text-muted leading-tight">
+                            {item?.nameEn || slug.replace(/_/g, " ")}
                           </span>
                         </button>
                       );
@@ -150,11 +161,13 @@ export default function BuildsPage() {
                       </div>
                       <div className="flex gap-3">
                         {variant.spells.map((s, si) => (
-                          <div key={si} className="flex flex-col items-center gap-1.5">
+                          <div key={si} className="flex w-20 flex-col items-center gap-1.5">
                             <div className="h-14 w-14 overflow-hidden rounded-2xl border-2" style={{ borderColor: "#333", background: color + "15" }}>
                               <img src={"/images/mlbb/spells/" + s + ".png"} alt={s} className="h-full w-full object-contain" />
                             </div>
-                            <span className="text-[10px] font-bold capitalize text-muted">{s}</span>
+                            <span className="text-center text-[10px] font-bold capitalize text-muted leading-tight">
+                              {s.replace(/_/g, " ")}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -164,20 +177,20 @@ export default function BuildsPage() {
                         EMBLEMS
                       </div>
                       <div className="flex gap-3">
-                        <div className="flex flex-col items-center gap-1.5">
+                        <div className="flex w-20 flex-col items-center gap-1.5">
                           <div className="h-14 w-14 overflow-hidden rounded-2xl border-2" style={{ borderColor: "#7c3aed", background: "#7c3aed15" }}>
                             <img src={"/images/mlbb/emblems/" + variant.emblem + ".png"} alt={variant.emblem} className="h-full w-full object-contain" />
                           </div>
-                          <span className="text-[10px] font-bold capitalize text-muted">{variant.emblem}</span>
+                          <span className="text-center text-[10px] font-bold capitalize text-muted leading-tight">{variant.emblem}</span>
                         </div>
                         {variant.talents.map((t, ti) => {
                           const slug = talentSlug(t);
                           return (
-                            <div key={ti} className="flex flex-col items-center gap-1.5">
+                            <div key={ti} className="flex w-20 flex-col items-center gap-1.5">
                               <div className="h-14 w-14 overflow-hidden rounded-2xl border-2" style={{ borderColor: "#7c3aed", background: "#7c3aed15" }}>
                                 <img src={"/images/mlbb/talents/" + slug + ".png"} alt={t} className="h-full w-full object-contain" />
                               </div>
-                              <span className="w-14 truncate text-center text-[10px] font-bold text-muted">{t}</span>
+                              <span className="text-center text-[10px] font-bold text-muted leading-tight">{t}</span>
                             </div>
                           );
                         })}
@@ -191,17 +204,21 @@ export default function BuildsPage() {
         </div>
       </section>
 
-      {selectedItem && ITEM_DETAILS[selectedItem] && (
+      {selectedItem && ALL_ITEMS[selectedItem] && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={() => setSelectedItem(null)}>
           <div className="w-full max-w-md rounded-2xl border border-line bg-surface p-6" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="h-16 w-16 overflow-hidden rounded-2xl border-2 border-line bg-black/20">
-                  <img src={"/images/mlbb/items/" + selectedItem + ".png"} alt={selectedItem} className="h-full w-full object-contain" />
+                  <img
+                    src={"/images/mlbb/items/" + (ALL_ITEMS[selectedItem].slug || selectedItem) + ".png"}
+                    alt={selectedItem}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <div>
-                  <div className="text-lg font-black">{km ? ITEM_DETAILS[selectedItem].nameKm : ITEM_DETAILS[selectedItem].nameEn}</div>
-                  <div className="text-xs text-muted">{ITEM_DETAILS[selectedItem].price} gold</div>
+                  <div className="text-lg font-black">{km ? ALL_ITEMS[selectedItem].nameKm : ALL_ITEMS[selectedItem].nameEn}</div>
+                  <div className="text-xs text-muted">{ALL_ITEMS[selectedItem].price} gold</div>
                 </div>
               </div>
               <button onClick={() => setSelectedItem(null)} className="rounded-full p-1 text-muted hover:text-fg">
@@ -211,11 +228,11 @@ export default function BuildsPage() {
             <div className="mt-4 space-y-3 text-xs">
               <div>
                 <div className="font-black text-emerald-400">{km ? "ស្ថិតិ" : "Stats"}</div>
-                <div className="text-muted">{km ? ITEM_DETAILS[selectedItem].stats.km : ITEM_DETAILS[selectedItem].stats.en}</div>
+                <div className="text-muted">{km ? ALL_ITEMS[selectedItem].stats.km : ALL_ITEMS[selectedItem].stats.en}</div>
               </div>
               <div>
                 <div className="font-black text-purple-400">Passive</div>
-                <div className="text-muted">{km ? ITEM_DETAILS[selectedItem].passive.km : ITEM_DETAILS[selectedItem].passive.en}</div>
+                <div className="text-muted">{km ? ALL_ITEMS[selectedItem].passive.km : ALL_ITEMS[selectedItem].passive.en}</div>
               </div>
             </div>
           </div>
