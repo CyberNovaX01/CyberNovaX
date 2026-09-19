@@ -14,6 +14,7 @@ import {
   ArrowRight,
   Loader2,
   Database,
+  Trash2,
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -21,6 +22,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [seeding, setSeeding] = useState(false);
   const [seedMessage, setSeedMessage] = useState("");
+  const [deletingId, setDeletingId] = useState<string | null>(null);
   const [stats, setStats] = useState({
     total: 0,
     mlbb: 0,
@@ -78,6 +80,32 @@ export default function AdminDashboard() {
       setSeedMessage("❌ Network error");
     } finally {
       setSeeding(false);
+    }
+  };
+
+  const handleDelete = async (id: string, title: string) => {
+    if (!confirm(`លុបព័ត៌មាននេះ?\n\n"${title}"\n\n(សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ)`))
+      return;
+
+    setDeletingId(id);
+    try {
+      const res = await fetch("/api/admin/news/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        setSeedMessage(`✅ បានលុប: ${title}`);
+        await fetchStats();
+      } else {
+        setSeedMessage(`❌ ${data.error || "Delete failed"}`);
+      }
+    } catch {
+      setSeedMessage("❌ Network error");
+    } finally {
+      setDeletingId(null);
     }
   };
 
@@ -278,6 +306,18 @@ export default function AdminDashboard() {
                   >
                     View →
                   </Link>
+                  <button
+                    onClick={() => handleDelete(n.id, n.title_km)}
+                    disabled={deletingId === n.id}
+                    className="shrink-0 rounded-lg border border-red-500/30 bg-red-500/10 p-2 text-red-400 transition-all hover:bg-red-500/20 hover:text-red-300 disabled:opacity-50"
+                    title="លុបព័ត៌មាននេះ"
+                  >
+                    {deletingId === n.id ? (
+                      <Loader2 size={14} className="animate-spin" />
+                    ) : (
+                      <Trash2 size={14} />
+                    )}
+                  </button>
                 </div>
               ))}
             </div>

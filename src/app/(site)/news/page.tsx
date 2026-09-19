@@ -1,5 +1,5 @@
 ﻿"use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Calendar,
@@ -26,6 +26,7 @@ const KM_M = ["មករា","កុម្ភៈ","មីនា","មេសា",
 const EN_M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 type GameKey = "ff" | "mlbb";
+type NewsItem = (typeof NEWS)[number];
 
 const CATEGORIES = [
   { key: "all", label: "All", icon: Layers, color: "#22d3ee" },
@@ -41,6 +42,27 @@ export default function NewsPage() {
   const { lang } = useLang();
   const [selectedGame, setSelectedGame] = useState<GameKey | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
+  const [newsList, setNewsList] = useState<NewsItem[]>(NEWS);
+
+  // Fetch from Supabase API on mount
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const res = await fetch("/api/news");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (alive && Array.isArray(data.news) && data.news.length > 0) {
+          setNewsList(data.news as NewsItem[]);
+        }
+      } catch {
+        // Keep fallback NEWS on error
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   const blogPosts = getAllPosts();
 
@@ -51,8 +73,8 @@ export default function NewsPage() {
     return lang === "km" ? day + " " + KM_M[m] : day + " " + EN_M[m];
   };
 
-  const ffNews = NEWS.filter((n) => n.game === "ff");
-  const mlbbNews = NEWS.filter((n) => n.game === "mlbb");
+  const ffNews = newsList.filter((n) => n.game === "ff");
+  const mlbbNews = newsList.filter((n) => n.game === "mlbb");
 
   const isFFPost = (slug: string) =>
     slug.startsWith("free-fire") ||
@@ -66,7 +88,7 @@ export default function NewsPage() {
   const ffPosts = blogPosts.filter((p) => isFFPost(p.slug));
   const mlbbPosts = blogPosts.filter((p) => isMLBBPost(p.slug));
 
-  const filterNews = (news: typeof NEWS, cat: string) => {
+  const filterNews = (news: NewsItem[], cat: string) => {
     if (cat === "all") return news;
     return news.filter((n) => n.category === cat);
   };
@@ -443,7 +465,8 @@ export default function NewsPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredNews.map((n, i) => (
               <FadeIn key={n.id} delay={i * 40}>
-                <article
+                <Link
+                  href={"/news/" + n.id}
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-line-2"
                   style={{ boxShadow: "0 20px 50px -30px " + n.accent + "88" }}
                 >
@@ -486,7 +509,7 @@ export default function NewsPage() {
                       <span>{fmt(n.date)}</span>
                     </div>
                   </div>
-                </article>
+                </Link>
               </FadeIn>
             ))}
           </div>

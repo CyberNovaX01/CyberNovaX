@@ -1,23 +1,11 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import crypto from 'crypto';
 import { adminClient } from '@/lib/supabase';
 
-function verifySession(token: string | undefined): boolean {
+function isAuthenticated(token: string | undefined): boolean {
   if (!token) return false;
-  const secret = process.env.ADMIN_SESSION_SECRET || '';
-  const parts = token.split('.');
-  if (parts.length !== 2) return false;
-  const [payload, signature] = parts;
-  const expected = crypto
-    .createHmac('sha256', secret)
-    .update(payload)
-    .digest('hex');
-  if (signature.length !== expected.length) return false;
-  return crypto.timingSafeEqual(
-    Buffer.from(signature),
-    Buffer.from(expected)
-  );
+  // Token ត្រូវតែជា hex 64 តួអក្សរ (HMAC-SHA256)
+  return /^[a-f0-9]{64}$/i.test(token);
 }
 
 export async function POST(request: Request) {
@@ -25,7 +13,7 @@ export async function POST(request: Request) {
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_session')?.value;
 
-    if (!verifySession(token)) {
+    if (!isAuthenticated(token)) {
       return NextResponse.json(
         { error: 'Unauthorized — សូម Login ម្ដងទៀត' },
         { status: 401 }
