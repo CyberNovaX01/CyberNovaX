@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Kantumruy_Pro, Sora, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="km" suppressHydrationWarning data-theme="dark" data-lang="km">
       <body className={`${inter.variable} ${kantumruy.variable} ${sora.variable} ${mono.variable} font-sans bg-app text-fg antialiased`}>
         <LangProvider>{children}</LangProvider>
+        <Analytics />
       </body>
     </html>
   );
