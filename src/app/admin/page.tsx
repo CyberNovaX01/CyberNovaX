@@ -15,6 +15,7 @@ import {
   Loader2,
   Database,
   Trash2,
+  Pencil,
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -305,6 +306,13 @@ export default function AdminDashboard() {
                     className="shrink-0 text-xs font-bold text-cyan-400 hover:text-cyan-300"
                   >
                     View →
+                  </Link>
+                  <Link
+                    href={"/admin/news/" + n.id + "/edit"}
+                    className="shrink-0 rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-2 text-cyan-400 transition-all hover:bg-cyan-500/20 hover:text-cyan-300"
+                    title="កែប្រែព័ត៌មាននេះ"
+                  >
+                    <Pencil size={14} />
                   </Link>
                   <button
                     onClick={() => handleDelete(n.id, n.title_km)}
