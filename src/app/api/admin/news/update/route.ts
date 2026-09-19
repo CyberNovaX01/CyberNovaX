@@ -34,6 +34,8 @@ export async function POST(request: Request) {
       content_km,
       content_en,
       image_url,
+      credit_url,
+      credit_name,
       blog_slug,
     } = body;
 
@@ -60,6 +62,8 @@ export async function POST(request: Request) {
         content_km,
         content_en,
         image_url: image_url || null,
+        credit_url: credit_url || null,
+        credit_name: credit_name || null,
         blog_slug: blog_slug || null,
       })
       .eq('id', id);

@@ -124,6 +124,8 @@ export default function AddNewsPage() {
     accent: "#a855f7",
     game: "mlbb",
     category: "hero",
+    credit_url: "",
+    credit_name: "",
     blog_slug: "",
   });
 
@@ -525,6 +527,34 @@ export default function AddNewsPage() {
                     value={form.date}
                     onChange={handleChange}
                     required
+                    className="mt-2 w-full rounded-xl border border-line bg-black/30 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-cyan-400/60"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-muted">
+                    Credit Name (Optional)
+                  </label>
+                  <input
+                    type="text"
+                    name="credit_name"
+                    value={form.credit_name}
+                    onChange={handleChange}
+                    placeholder="e.g. Official Facebook"
+                    className="mt-2 w-full rounded-xl border border-line bg-black/30 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-cyan-400/60"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-muted">
+                    Credit URL (Optional)
+                  </label>
+                  <input
+                    type="text"
+                    name="credit_url"
+                    value={form.credit_url}
+                    onChange={handleChange}
+                    placeholder="https://..."
                     className="mt-2 w-full rounded-xl border border-line bg-black/30 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-cyan-400/60"
                   />
                 </div>

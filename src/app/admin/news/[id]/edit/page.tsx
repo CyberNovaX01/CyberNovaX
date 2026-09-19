@@ -28,6 +28,8 @@ type NewsItem = {
   content_km: string;
   content_en: string;
   image_url?: string;
+  credit_url?: string;
+  credit_name?: string;
   blog_slug?: string;
 };
 
@@ -65,6 +67,8 @@ export default function EditNewsPage() {
     content_km: "",
     content_en: "",
     image_url: "",
+    credit_url: "",
+    credit_name: "",
     blog_slug: "",
   });
 
@@ -95,6 +99,8 @@ export default function EditNewsPage() {
           content_km: found.content?.km || "",
           content_en: found.content?.en || "",
           image_url: found.image || "",
+          credit_url: found.credit_url || "",
+          credit_name: found.credit_name || "",
           blog_slug: found.blogSlug || "",
         });
       } catch {
@@ -343,9 +349,9 @@ export default function EditNewsPage() {
             />
           </div>
 
-          {/* IMAGE URL + BLOG SLUG */}
+          {/* IMAGE URL + CREDIT URL + CREDIT NAME */}
           <div className="grid gap-4 sm:grid-cols-2">
-            <div>
+            <div className="sm:col-span-2">
               <label className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted">
                 <ImageIcon size={12} /> Image URL
               </label>
@@ -357,18 +363,46 @@ export default function EditNewsPage() {
                 className="w-full rounded-xl border border-line bg-black/30 px-4 py-2.5 text-sm text-white outline-none focus:border-cyan-400"
               />
             </div>
+
             <div>
               <label className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted">
-                <LinkIcon size={12} /> Blog Slug
+                <LinkIcon size={12} /> Credit Name (Optional)
               </label>
               <input
                 type="text"
-                value={form.blog_slug || ""}
-                onChange={(e) => update("blog_slug", e.target.value)}
-                placeholder="optional"
+                value={form.credit_name || ""}
+                onChange={(e) => update("credit_name", e.target.value)}
+                placeholder="e.g. Official Facebook"
                 className="w-full rounded-xl border border-line bg-black/30 px-4 py-2.5 text-sm text-white outline-none focus:border-cyan-400"
               />
             </div>
+
+            <div>
+              <label className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted">
+                <LinkIcon size={12} /> Credit URL (Optional)
+              </label>
+              <input
+                type="text"
+                value={form.credit_url || ""}
+                onChange={(e) => update("credit_url", e.target.value)}
+                placeholder="https://..."
+                className="w-full rounded-xl border border-line bg-black/30 px-4 py-2.5 text-sm text-white outline-none focus:border-cyan-400"
+              />
+            </div>
+          </div>
+
+          {/* BLOG SLUG */}
+          <div>
+            <label className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted">
+              <LinkIcon size={12} /> Blog Slug
+            </label>
+            <input
+              type="text"
+              value={form.blog_slug || ""}
+              onChange={(e) => update("blog_slug", e.target.value)}
+              placeholder="optional"
+              className="w-full rounded-xl border border-line bg-black/30 px-4 py-2.5 text-sm text-white outline-none focus:border-cyan-400"
+            />
           </div>
 
           {/* ACTIONS */}

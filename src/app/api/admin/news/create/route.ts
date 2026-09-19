@@ -44,6 +44,9 @@ export async function POST(req: NextRequest) {
       accent: body.accent,
       game: body.game,
       category: body.category,
+      image_url: body.image_url || null,
+      credit_url: body.credit_url || null,
+      credit_name: body.credit_name || null,
       blog_slug: body.blog_slug || null,
     });
 

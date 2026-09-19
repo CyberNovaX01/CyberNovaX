@@ -7,6 +7,7 @@ import {
   Clock,
   Share2,
   Tag,
+  ExternalLink,
 } from "lucide-react";
 import { publicClient } from "@/lib/supabase";
 import { NEWS } from "@/lib/siteData";
@@ -24,6 +25,10 @@ type NewsRow = {
   excerpt_en: string;
   content_km: string;
   content_en: string;
+  image_url: string | null;
+  credit_url: string | null;
+  credit_name: string | null;
+  blog_slug: string | null;
 };
 
 async function getNewsItem(id: string): Promise<NewsRow | null> {
@@ -56,6 +61,10 @@ async function getNewsItem(id: string): Promise<NewsRow | null> {
     excerpt_en: fallback.excerpt.en,
     content_km: fallback.content.km,
     content_en: fallback.content.en,
+    image_url: null,
+    credit_url: null,
+    credit_name: null,
+    blog_slug: null,
   };
 }
 
@@ -202,17 +211,27 @@ export default async function NewsDetailPage({
       </header>
 
       {/* COVER */}
-      <div
-        className="mt-8 aspect-[16/9] w-full overflow-hidden rounded-3xl border border-line"
-        style={{
-          background:
-            "linear-gradient(135deg, " +
-            item.accent +
-            "60 0%, " +
-            item.accent +
-            "20 50%, #0a0d14 100%)",
-        }}
-      />
+      <div className="mt-8 aspect-[16/9] w-full overflow-hidden rounded-3xl border border-line bg-black/20">
+        {item.image_url ? (
+          <img
+            src={item.image_url}
+            alt={item.title_km}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <div
+            className="h-full w-full"
+            style={{
+              background:
+                "linear-gradient(135deg, " +
+                item.accent +
+                "60 0%, " +
+                item.accent +
+                "20 50%, #0a0d14 100%)",
+            }}
+          />
+        )}
+      </div>
 
       {/* EXCERPT */}
       <div
@@ -226,6 +245,46 @@ export default async function NewsDetailPage({
 
       {/* CONTENT */}
       <div className="mt-8">{renderContent(item.content_km)}</div>
+
+      {/* CREDIT */}
+      {item.credit_url && (
+        <div className="mt-8 rounded-2xl border border-line bg-surface/60 p-4 backdrop-blur-md">
+          <div className="flex items-center gap-3">
+            <div
+              className="grid h-10 w-10 shrink-0 place-items-center rounded-xl"
+              style={{
+                background: item.accent + "20",
+                color: item.accent,
+              }}
+            >
+              <Share2 size={16} />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] font-black uppercase tracking-wider text-muted">
+                ប្រភព / Source
+              </div>
+              <a
+                href={item.credit_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-0.5 block truncate text-sm font-bold hover:underline"
+                style={{ color: item.accent }}
+              >
+                {item.credit_name || item.credit_url}
+              </a>
+            </div>
+            <a
+              href={item.credit_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-line bg-black/20 px-3 py-2 text-xs font-black text-muted transition-all hover:border-cyan-400/40 hover:text-cyan-400"
+            >
+              មើល
+              <ExternalLink size={11} />
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* FOOTER NAV */}
       <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
