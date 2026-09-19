@@ -3,6 +3,7 @@ import { Inter, Kantumruy_Pro, Sora, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const kantumruy = Kantumruy_Pro({ subsets: ["khmer", "latin"], weight: ["300","400","500","600","700"], variable: "--font-kantumruy", display: "swap" });
